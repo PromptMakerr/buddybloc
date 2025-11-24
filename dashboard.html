@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BuddyBloc</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">B</div>
+                    <span>BuddyBloc</span>
+                </a>
+            </div>
+
+            <!-- User Profile Card -->
+            <div class="user-profile-card">
+                <div class="user-profile-header">
+                    <div class="avatar avatar-lg">
+                        <div class="avatar-status online"></div>
+                        JS
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 0.25rem;">Jordan Smith</h3>
+                        <div class="rating-display" style="font-size: var(--font-size-sm);">
+                            <div class="rating-stars">
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                                <span class="star active">★</span>
+                            </div>
+                            <span class="rating-value">4.8</span>
+                        </div>
+                        <div class="reliability-score" style="margin-top: 0.5rem; padding: 0.25rem 0.75rem;">
+                            <span class="reliability-percentage" style="font-size: var(--font-size-base);">96%</span>
+                            <span class="reliability-label" style="font-size: var(--font-size-xs);">Reliable</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="badges-mini">
+                    <span class="badge-mini" title="Welcome Aboard">🎉</span>
+                    <span class="badge-mini" title="7-Day Streak">🔥</span>
+                    <span class="badge-mini" title="Bronze Buddy">🥉</span>
+                </div>
+
+                <div class="user-stats">
+                    <div class="user-stat">
+                        <div class="user-stat-value">127</div>
+                        <div class="user-stat-label">Sessions</div>
+                    </div>
+                    <div class="user-stat">
+                        <div class="user-stat-value">15</div>
+                        <div class="user-stat-label">Streak</div>
+                    </div>
+                    <div class="user-stat">
+                        <div class="user-stat-value">12</div>
+                        <div class="user-stat-label">Badges</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="matchmaking.html" class="nav-item">
+                    <span class="material-symbols-outlined">group_add</span>
+                    <span>Find Buddy</span>
+                </a>
+                <a href="chat.html" class="nav-item">
+                    <span class="material-symbols-outlined">chat</span>
+                    <span>Messages</span>
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <span class="material-symbols-outlined">person</span>
+                    <span>Profile</span>
+                </a>
+                <a href="settings.html" class="nav-item">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span>Settings</span>
+                </a>
+                <div style="margin: var(--spacing-md) 0; height: 1px; background: var(--color-border);"></div>
+                <a href="login.html" class="nav-item">
+                    <span class="material-symbols-outlined">logout</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div>
+                    <h1 style="font-size: var(--font-size-3xl); margin-bottom: 0.25rem;">Welcome back, Jordan! 👋</h1>
+                    <p style="color: var(--color-text-secondary);">Ready for another productive day?</p>
+                </div>
+                <button class="btn btn-primary">
+                    <span class="material-symbols-outlined">add</span>
+                    <span>Start Session</span>
+                </button>
+            </header>
+
+            <div class="dashboard-body">
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Sessions Completed</div>
+                        <div class="stat-value">127</div>
+                        <div class="stat-change positive">+12 this week</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Hours Focused</div>
+                        <div class="stat-value">342</div>
+                        <div class="stat-change positive">+18 this week</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Current Streak</div>
+                        <div class="stat-value">15 🔥</div>
+                        <div class="stat-change">Best: 28 days</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Badges Earned</div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-change positive">+2 this month</div>
+                    </div>
+                </div>
+
+                <!-- Achievement Notification -->
+                <div class="card"
+                    style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-color: var(--color-primary); margin-bottom: var(--spacing-xl);">
+                    <div style="display: flex; align-items: center; gap: var(--spacing-md);">
+                        <span style="font-size: 3rem;">🏆</span>
+                        <div style="flex: 1;">
+                            <h3 style="margin-bottom: 0.25rem;">New Badge Unlocked!</h3>
+                            <p style="margin: 0;">You've earned the "7-Day Streak" badge. Keep up the great work!</p>
+                        </div>
+                        <button class="btn btn-primary">View Badges</button>
+                    </div>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+                    <!-- Upcoming Sessions -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Upcoming Sessions</h2>
+                            <a href="#" style="color: var(--color-primary-light); font-size: var(--font-size-sm);">View
+                                All</a>
+                        </div>
+                        <div class="card-body">
+                            <!-- Session Item -->
+                            <div
+                                style="display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-md); background: var(--color-surface-elevated); border-radius: var(--radius-lg); margin-bottom: var(--spacing-sm);">
+                                <div class="avatar avatar-md">
+                                    <div class="avatar-status online"></div>
+                                    SL
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="font-size: var(--font-size-base); margin-bottom: 0.25rem;">Sarah Lane
+                                    </h4>
+                                    <div class="rating-display"
+                                        style="font-size: var(--font-size-sm); margin-bottom: 0.25rem;">
+                                        <div class="rating-stars">
+                                            <span class="star active">★</span>
+                                            <span class="star active">★</span>
+                                            <span class="star active">★</span>
+                                            <span class="star active">★</span>
+                                            <span class="star active">★</span>
+                                        </div>
+                                        <span class="rating-value">4.9</span>
+                                    </div>
+                                    <p
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0;">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1rem; vertical-align: middle;">schedule</span>
+                                        Today at 14:00 - 16:00
+                                    </p>
+                                </div>
+                                <button class="btn btn-primary">Join</button>
+                            </div>
+
+                            <div
+                                style="display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-md); background: var(--color-surface-elevated); border-radius: var(--radius-lg);">
+                                <div class="avatar avatar-md">
+                                    MW
+                                </div>
+                                <div style="flex: 1;">
+                                    <h4 style="font-size: var(--font-size-base); margin-bottom: 0.25rem;">Michael Wong
+                                    </h4>
+                                    <div class="rating-display"
+                                        style="font-size: var(--font-size-sm); margin-bottom: 0.25rem;">
+                                        <div class="rating-stars">
+                                            <span class="star active">★</span>
+                                            <span class="star active">★</span>
+                                            <span class="star active">★</span>
+                                            <span class="star active">★</span>
+                                            <span class="star">★</span>
+                                        </div>
+                                        <span class="rating-value">4.6</span>
+                                    </div>
+                                    <p
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0;">
+                                        <span class="material-symbols-outlined"
+                                            style="font-size: 1rem; vertical-align: middle;">schedule</span>
+                                        Tomorrow at 10:00 - 12:00
+                                    </p>
+                                </div>
+                                <button class="btn btn-secondary">Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leaderboard -->
+                    <div class="leaderboard">
+                        <h3 style="font-size: var(--font-size-xl); margin-bottom: var(--spacing-md);">🏆 Top Buddies
+                        </h3>
+                        <p
+                            style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: var(--spacing-md);">
+                            This Week</p>
+
+                        <div class="leaderboard-item">
+                            <div class="leaderboard-rank top">1</div>
+                            <div class="avatar avatar-sm">AM</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: var(--font-size-sm);">Anna M.</div>
+                                <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">42h</div>
+                            </div>
+                        </div>
+
+                        <div class="leaderboard-item">
+                            <div class="leaderboard-rank top">2</div>
+                            <div class="avatar avatar-sm">JS</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: var(--font-size-sm);">Jordan S.</div>
+                                <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">38h</div>
+                            </div>
+                        </div>
+
+                        <div class="leaderboard-item">
+                            <div class="leaderboard-rank top">3</div>
+                            <div class="avatar avatar-sm">LK</div>
+                            <div style="flex: 1;">
+                                <div style="font-weight: 600; font-size: var(--font-size-sm);">Lisa K.</div>
+                                <div style="font-size: var(--font-size-xs); color: var(--color-text-muted);">35h</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Buddy Matches -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Your Buddy Matches</h2>
+                        <a href="matchmaking.html"
+                            style="color: var(--color-primary-light); font-size: var(--font-size-sm);">Find More</a>
+                    </div>
+                    <div class="card-body">
+                        <div
+                            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--spacing-lg);">
+                            <!-- Buddy Card -->
+                            <div
+                                style="background: var(--color-surface-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+                                <div
+                                    style="display: flex; align-items: start; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                                    <div class="avatar avatar-lg">
+                                        <div class="avatar-status online"></div>
+                                        SL
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <h4 style="margin-bottom: 0.25rem;">Sarah Lane</h4>
+                                        <p
+                                            style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                                            UX Designer</p>
+                                        <div class="badge badge-success" style="font-size: var(--font-size-xs);">95%
+                                            Match</div>
+                                    </div>
+                                </div>
+                                <div class="rating-display" style="margin-bottom: var(--spacing-sm);">
+                                    <div class="rating-stars">
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                    </div>
+                                    <span class="rating-value">4.9</span>
+                                    <span class="rating-count">(89)</span>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm);">
+                                    <button class="btn btn-primary"
+                                        style="flex: 1; font-size: var(--font-size-sm); padding: 0.625rem 1rem;">
+                                        <span class="material-symbols-outlined" style="font-size: 1.125rem;">chat</span>
+                                        <span>Chat</span>
+                                    </button>
+                                    <button class="btn btn-outline"
+                                        style="flex: 1; font-size: var(--font-size-sm); padding: 0.625rem 1rem;">
+                                        <span>Profile</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div
+                                style="background: var(--color-surface-elevated); padding: var(--spacing-lg); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+                                <div
+                                    style="display: flex; align-items: start; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                                    <div class="avatar avatar-lg">MW</div>
+                                    <div style="flex: 1;">
+                                        <h4 style="margin-bottom: 0.25rem;">Michael Wong</h4>
+                                        <p
+                                            style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: 0.5rem;">
+                                            Software Dev</p>
+                                        <div class="badge badge-primary" style="font-size: var(--font-size-xs);">88%
+                                            Match</div>
+                                    </div>
+                                </div>
+                                <div class="rating-display" style="margin-bottom: var(--spacing-sm);">
+                                    <div class="rating-stars">
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star active">★</span>
+                                        <span class="star">★</span>
+                                    </div>
+                                    <span class="rating-value">4.6</span>
+                                    <span class="rating-count">(54)</span>
+                                </div>
+                                <div style="display: flex; gap: var(--spacing-sm);">
+                                    <button class="btn btn-primary"
+                                        style="flex: 1; font-size: var(--font-size-sm); padding: 0.625rem 1rem;">
+                                        <span class="material-symbols-outlined" style="font-size: 1.125rem;">chat</span>
+                                        <span>Chat</span>
+                                    </button>
+                                    <button class="btn btn-outline"
+                                        style="flex: 1; font-size: var(--font-size-sm); padding: 0.625rem 1rem;">
+                                        <span>Profile</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

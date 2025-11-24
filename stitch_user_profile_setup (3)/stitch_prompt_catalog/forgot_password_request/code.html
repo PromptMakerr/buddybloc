@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Forgot Password Request</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glossy-button {
+            background-image: linear-gradient(to top, #427cf0, #5c8df3);
+            box-shadow: 0 4px 15px 0 rgba(66, 124, 240, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease-in-out;
+        }
+        .glossy-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(66, 124, 240, 0.35), 0 1px 3px 0 rgba(0, 0, 0, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+        }
+        .glossy-button:active {
+            transform: translateY(0px);
+            box-shadow: 0 2px 10px 0 rgba(66, 124, 240, 0.25), 0 1px 1px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#427cf0", /* Based on #4A90E2 */
+              "background-light": "#F5F7FA", /* Light Gray */
+              "background-dark": "#101622",
+              "content-light": "#FFFFFF", /* White */
+              "content-dark": "#192233",
+              "text-light": "#4F4F4F", /* Dark Gray */
+              "text-dark": "#E0E0E0",
+              "text-muted-light": "#828282",
+              "text-muted-dark": "#A0A0A0"
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "3rem", "full": "9999px"},
+            boxShadow: {
+              'inner-subtle': 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden p-4">
+<div class="flex w-full max-w-md flex-col items-center rounded-lg bg-content-light dark:bg-content-dark p-6 sm:p-8 shadow-lg">
+<!-- HeadlineText -->
+<h1 class="text-text-light dark:text-text-dark tracking-light text-[32px] font-bold leading-tight text-center pb-2 pt-4">Reset Password</h1>
+<!-- BodyText -->
+<p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal pb-8 text-center">Enter your email to receive a reset link.</p>
+<!-- TextField -->
+<div class="flex w-full flex-wrap items-end gap-4 pb-6">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Email Address</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg shadow-inner-subtle">
+<div class="text-text-muted-light dark:text-text-muted-dark flex border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark items-center justify-center pl-[15px] rounded-l-lg border-r-0" data-icon="Mail" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-background-dark h-14 placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark p-[15px] rounded-l-none border-l-0 text-base font-normal leading-normal" placeholder="your.email@example.com" type="email" value=""/>
+</div>
+</label>
+</div>
+<!-- SingleButton -->
+<div class="flex w-full px-0 py-3">
+<button class="glossy-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 flex-1 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Send Reset Link</span>
+</button>
+</div>
+<!-- MetaText -->
+<a class="text-primary hover:underline text-sm font-medium leading-normal pt-6 pb-2 text-center" href="#">Back to Login</a>
+</div>
+</div>
+</body></html>

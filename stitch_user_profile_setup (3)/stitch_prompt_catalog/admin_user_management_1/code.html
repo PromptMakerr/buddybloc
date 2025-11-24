@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Admin Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,0" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .glossy-button {
+      background-image: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0.5) 100%);
+      box-shadow: 0 4px 15px -5px rgba(0, 0, 0, 0.2);
+      transition: all 0.2s ease-in-out;
+    }
+    .glossy-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.3);
+    }
+    .striped-bg {
+      background-color: #ffffff;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(137, 207, 240, 0.08) 10px,
+        rgba(137, 207, 240, 0.08) 20px
+      );
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#427cf0",
+            "background-light": "#f0f2f5",
+            "background-dark": "#101622",
+            "accent": "#89CFF0",
+            "text-dark": "#333333"
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-3 backdrop-blur-sm">
+<button class="flex size-10 shrink-0 items-center justify-center rounded-full text-text-dark dark:text-white">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</button>
+<h1 class="text-xl font-bold leading-tight tracking-tight flex-1 text-center pr-10">User Details</h1>
+</header>
+<main class="flex flex-1 flex-col gap-6 p-4">
+<div class="rounded-lg striped-bg dark:bg-slate-800 dark:bg-none p-6 shadow-md flex flex-col items-center text-center">
+<img class="h-24 w-24 rounded-full object-cover ring-4 ring-white dark:ring-slate-700 shadow-lg" data-alt="Profile picture of Eleanor Vance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBppsjvhSxLxcuGPmTa3kAz3OSJjr6z0T3YcL8sXPcgRkOUEHNSrwIqfpsXsTrQfEMjcVWLrRhEBSGkgr9SvPdR6vG8xQaZSstti4Ta4LeOFD5P-LSMrqHUPpqLmHMfrppwmQOl7KlnX0fpXS_WfecasikL_Bw32G3vIONQ3qGIt5sRFdkX7p97lBn8RbzR67h3HKzLTIsfiN-yZx1Ht-Q1VtW_6kgoeZ40jrpMsGAT1ipZq9vNJE2IMY7jRMFz-c6ebk_m1yaGNIP8"/>
+<h2 class="mt-4 text-2xl font-bold text-text-dark dark:text-white">Eleanor Vance</h2>
+<p class="text-slate-500 dark:text-slate-400">eleanor.v@prompterion.ai</p>
+<span class="mt-2 rounded-full bg-accent/20 px-4 py-1.5 text-sm font-semibold text-accent dark:bg-accent/30 dark:text-accent">Admin</span>
+</div>
+<div class="rounded-lg striped-bg dark:bg-slate-800 dark:bg-none p-5 shadow-md">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">phone</span>
+<span class="flex-1 text-base text-text-dark dark:text-white">+1 (555) 123-4567</span>
+</div>
+<div class="h-px bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">calendar_today</span>
+<span class="flex-1 text-base text-text-dark dark:text-white">Registered: Jan 15, 2023</span>
+</div>
+</div>
+</div>
+<div class="rounded-lg striped-bg dark:bg-slate-800 dark:bg-none p-5 shadow-md">
+<h3 class="text-lg font-bold mb-4 text-text-dark dark:text-white">Recent Activity</h3>
+<div class="grid grid-cols-3 gap-4 text-center">
+<div>
+<p class="text-2xl font-bold text-accent">128</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Prompts</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-accent">12</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Purchases</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-accent">42</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Posts</p>
+</div>
+</div>
+</div>
+<div class="mt-auto flex flex-col gap-3 pt-4">
+<button class="flex h-12 w-full items-center justify-center gap-x-2 rounded-full bg-accent text-white px-5 shadow-sm glossy-button">
+<span class="material-symbols-outlined">edit</span>
+<p class="text-base font-medium leading-normal">Edit User Profile</p>
+</button>
+<button class="flex h-12 w-full items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-700 text-text-dark dark:text-white px-5 shadow-sm border border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined">badge</span>
+<p class="text-base font-medium leading-normal">Change User Role</p>
+</button>
+<button class="flex h-12 w-full items-center justify-center gap-x-2 rounded-full bg-amber-500 text-white px-5 shadow-sm glossy-button">
+<span class="material-symbols-outlined">no_accounts</span>
+<p class="text-base font-medium leading-normal">Suspend Account</p>
+</button>
+<button class="flex h-12 w-full items-center justify-center gap-x-2 rounded-full bg-red-600 text-white px-5 shadow-sm glossy-button">
+<span class="material-symbols-outlined">delete</span>
+<p class="text-base font-medium leading-normal">Delete Account</p>
+</button>
+</div>
+</main>
+</div>
+
+</body></html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - BuddyBloc</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+
+        .chat-layout {
+            display: flex;
+            height: calc(100vh - 80px)
+        }
+
+        .chat-sidebar {
+            width: 320px;
+            background: var(--color-surface);
+            border-right: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column
+        }
+
+        .chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column
+        }
+
+        .chat-header {
+            padding: var(--spacing-lg);
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md)
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: var(--spacing-lg);
+            overflow-y: auto
+        }
+
+        .message {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md)
+        }
+
+        .message.sent {
+            flex-direction: row-reverse
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-lg);
+            background: var(--color-surface-elevated)
+        }
+
+        .message.sent .message-bubble {
+            background: var(--gradient-primary);
+            color: white
+        }
+
+        .chat-input {
+            padding: var(--spacing-lg);
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            gap: var(--spacing-sm)
+        }
+
+        .conversation-item {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border);
+            cursor: pointer;
+            transition: background var(--transition-fast)
+        }
+
+        .conversation-item:hover {
+            background: var(--color-surface-elevated)
+        }
+
+        .conversation-item.active {
+            background: var(--color-surface-elevated)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header"><a href="index.html" class="logo">
+                    <div class="logo-icon">B</div><span>BuddyBloc</span>
+                </a></div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item"><span
+                        class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+                <a href="matchmaking.html" class="nav-item"><span
+                        class="material-symbols-outlined">group_add</span><span>Find Buddy</span></a>
+                <a href="chat.html" class="nav-item active"><span
+                        class="material-symbols-outlined">chat</span><span>Messages</span></a>
+                <a href="profile.html" class="nav-item"><span
+                        class="material-symbols-outlined">person</span><span>Profile</span></a>
+                <a href="settings.html" class="nav-item"><span
+                        class="material-symbols-outlined">settings</span><span>Settings</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="chat-layout">
+                <!-- Conversations Sidebar -->
+                <div class="chat-sidebar">
+                    <div style="padding:var(--spacing-lg);border-bottom:1px solid var(--color-border)">
+                        <h2 style="font-size:var(--font-size-xl);margin-bottom:var(--spacing-sm)">Messages</h2>
+                        <input type="text" class="form-input" placeholder="Search conversations...">
+                    </div>
+                    <div style="flex:1;overflow-y:auto">
+                        <div class="conversation-item active">
+                            <div style="display:flex;align-items:center;gap:var(--spacing-sm);margin-bottom:0.25rem">
+                                <div class="avatar avatar-md">
+                                    <div class="avatar-status online"></div>SL
+                                </div>
+                                <div style="flex:1">
+                                    <h4 style="font-size:var(--font-size-sm);margin-bottom:0.125rem">Sarah Lane</h4>
+                                    <p
+                                        style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+                                        Looking forward to our session!</p>
+                                </div>
+                                <span class="badge badge-primary" style="font-size:0.625rem">2</span>
+                            </div>
+                        </div>
+                        <div class="conversation-item">
+                            <div style="display:flex;align-items:center;gap:var(--spacing-sm);margin-bottom:0.25rem">
+                                <div class="avatar avatar-md">MW</div>
+                                <div style="flex:1">
+                                    <h4 style="font-size:var(--font-size-sm);margin-bottom:0.125rem">Michael Wong</h4>
+                                    <p
+                                        style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+                                        Thanks for the great session!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Main Area -->
+                <div class="chat-main">
+                    <div class="chat-header">
+                        <div class="avatar avatar-md">
+                            <div class="avatar-status online"></div>SL
+                        </div>
+                        <div style="flex:1">
+                            <h3 style="margin-bottom:0.125rem">Sarah Lane</h3>
+                            <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">Online</p>
+                        </div>
+                        <button class="btn btn-primary"><span
+                                class="material-symbols-outlined">videocam</span><span>Video Call</span></button>
+                    </div>
+
+                    <div class="chat-messages">
+                        <div class="message">
+                            <div class="avatar avatar-sm">SL</div>
+                            <div>
+                                <div class="message-bubble">
+                                    <p style="margin:0">Hey Jordan! Ready for our session today?</p>
+                                </div>
+                                <span
+                                    style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin-top:0.25rem;display:block">10:30
+                                    AM</span>
+                            </div>
+                        </div>
+
+                        <div class="message sent">
+                            <div>
+                                <div class="message-bubble">
+                                    <p style="margin:0">Absolutely! Looking forward to it. 2pm still works for you?</p>
+                                </div>
+                                <span
+                                    style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin-top:0.25rem;display:block;text-align:right">10:32
+                                    AM</span>
+                            </div>
+                        </div>
+
+                        <div class="message">
+                            <div class="avatar avatar-sm">SL</div>
+                            <div>
+                                <div class="message-bubble">
+                                    <p style="margin:0">Perfect! See you then 👍</p>
+                                </div>
+                                <span
+                                    style="font-size:var(--font-size-xs);color:var(--color-text-muted);margin-top:0.25rem;display:block">10:33
+                                    AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <input type="text" class="form-input" placeholder="Type a message..." style="flex:1">
+                        <button class="btn btn-secondary"><span
+                                class="material-symbols-outlined">attach_file</span></button>
+                        <button class="btn btn-primary"><span class="material-symbols-outlined">send</span></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

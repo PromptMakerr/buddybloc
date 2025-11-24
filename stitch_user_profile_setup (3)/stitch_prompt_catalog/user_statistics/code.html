@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Statistics - Prompterion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      .diagonal-stripes {
+          background-image: repeating-linear-gradient(
+            -45deg,
+            rgba(137, 207, 240, 0.05),
+            rgba(137, 207, 240, 0.05) 10px,
+            transparent 10px,
+            transparent 20px
+          );
+      }
+      .dark .diagonal-stripes {
+          background-image: repeating-linear-gradient(
+            -45deg,
+            rgba(66, 124, 240, 0.05),
+            rgba(66, 124, 240, 0.05) 10px,
+            transparent 10px,
+            transparent 20px
+          );
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#427cf0",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "accent": "#89CFF0",
+              "text-light": "#333333",
+              "text-dark": "#E0E0E0",
+              "card-light": "#FFFFFF",
+              "card-dark": "#1A2332",
+              "border-light": "#e0e6f1",
+              "border-dark": "#2a374e",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+            boxShadow: {
+              'inner-gloss': 'inset 0 1px 1px 0 rgba(255, 255, 255, 0.5), 0 1px 2px 0 rgba(0, 0, 0, 0.1)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<!-- Top App Bar -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<div class="flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-text-light dark:text-text-dark text-2xl">arrow_back</span>
+</div>
+<h2 class="text-lg font-bold flex-1 text-center pr-10">My Statistics</h2>
+</div>
+<!-- Timeframe Filter Chips -->
+<div class="flex gap-3 px-4 py-3 overflow-x-auto">
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary/20 dark:bg-primary/30 px-5 shadow-inner-gloss">
+<p class="text-primary dark:text-white text-sm font-medium">Last 7 Days</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark px-5 hover:bg-primary/10 transition-colors">
+<p class="text-text-light dark:text-text-dark text-sm font-medium">Last 30 Days</p>
+</div>
+<div class="flex h-10 shrink-0 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark px-5 hover:bg-primary/10 transition-colors">
+<p class="text-text-light dark:text-text-dark text-sm font-medium">All Time</p>
+</div>
+</div>
+<!-- Main Content Panel -->
+<div class="flex-1 rounded-t-xl bg-card-light dark:bg-card-dark/50 diagonal-stripes">
+<div class="p-4 space-y-6">
+<!-- Prompt Metrics Section -->
+<div>
+<h3 class="text-lg font-bold px-2 pb-3">Prompt Metrics</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 rounded-lg bg-card-light dark:bg-card-dark p-5 border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-accent/20 text-accent">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<p class="text-base font-medium">Prompts Created</p>
+</div>
+<p class="tracking-light text-3xl font-bold mt-2">128</p>
+</div>
+<div class="flex flex-col gap-2 rounded-lg bg-card-light dark:bg-card-dark p-5 border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-accent/20 text-accent">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<p class="text-base font-medium">Prompts Purchased</p>
+</div>
+<p class="tracking-light text-3xl font-bold mt-2">42</p>
+</div>
+<div class="col-span-1 sm:col-span-2 flex flex-col gap-2 rounded-lg bg-card-light dark:bg-card-dark p-5 border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-accent/20 text-accent">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<p class="text-base font-medium">Prompts Favorited</p>
+</div>
+<p class="tracking-light text-3xl font-bold mt-2">76</p>
+</div>
+</div>
+</div>
+<!-- Usage Metrics Section -->
+<div>
+<h3 class="text-lg font-bold px-2 pb-3">Usage Metrics</h3>
+<div class="rounded-lg bg-card-light dark:bg-card-dark p-5 border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-accent/20 text-accent">
+<span class="material-symbols-outlined">psychology</span>
+</div>
+<p class="text-base font-medium">AI Assistant Uses</p>
+</div>
+<p class="tracking-light text-3xl font-bold mt-2 mb-4">1,204</p>
+<!-- Mini Bar Chart Placeholder -->
+<div class="flex h-20 w-full items-end gap-2">
+<div class="h-[40%] w-1/6 rounded-full bg-accent/30"></div>
+<div class="h-[60%] w-1/6 rounded-full bg-accent/30"></div>
+<div class="h-[80%] w-1/6 rounded-full bg-accent"></div>
+<div class="h-[50%] w-1/6 rounded-full bg-accent/30"></div>
+<div class="h-[70%] w-1/6 rounded-full bg-accent/30"></div>
+<div class="h-[90%] w-1/6 rounded-full bg-accent"></div>
+</div>
+</div>
+</div>
+<!-- Community Engagement Section -->
+<div>
+<h3 class="text-lg font-bold px-2 pb-3">Community Engagement</h3>
+<div class="rounded-lg bg-card-light dark:bg-card-dark p-5 border border-border-light dark:border-border-dark">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center size-10 rounded-full bg-accent/20 text-accent">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<p class="text-base font-medium">Posts &amp; Reviews</p>
+</div>
+<div class="flex items-center gap-6 mt-4">
+<!-- Progress Ring -->
+<div class="relative size-20">
+<svg class="size-full" height="36" viewbox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+<circle class="stroke-current text-accent/20" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-current text-accent" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100" stroke-dashoffset="35" stroke-linecap="round" stroke-width="3"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-sm font-bold text-accent">65%</span>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="tracking-light text-3xl font-bold">58</p>
+<p class="text-sm text-text-light/70 dark:text-text-dark/70">Total contributions</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-8"></div>
+</div>
+</div>
+</body></html>

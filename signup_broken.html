@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sign up for BuddyBloc - Join thousands of remote professionals finding their productivity partners.">
+    <title>Sign Up - BuddyBloc</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+
+    <!-- Google Material Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+        }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--color-border);
+            z-index: 0;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--color-surface-elevated);
+            border: 2px solid var(--color-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--color-text-muted);
+            transition: all var(--transition-base);
+        }
+
+        .progress-step.active .step-circle {
+            background: var(--gradient-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+
+        .progress-step.completed .step-circle {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+
+        .step-label {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-muted);
+            font-weight: 600;
+        }
+
+        .progress-step.active .step-label {
+            color: var(--color-primary);
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="auth-page">
+        <div class="auth-card" style="max-width: 600px;">
+            <div class="auth-header">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">B</div>
+                    <span>BuddyBloc</span>
+                </a>
+                <h1>Join BuddyBloc</h1>
+                <p>Start your journey to better productivity</p>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Account</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Profile</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Preferences</span>
+                </div>
+            </div>
+
+            <!-- Social Signup -->
+            <div class="social-buttons">
+                <button class="btn-social" type="button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M10 0C4.477 0 0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.879V12.89h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.989C16.343 19.128 20 14.991 20 10c0-5.523-4.477-10-10-10z" />
+                    </svg>
+                    <span>Google</span>
+                </button>
+                <button class="btn-social" type="button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M18.52 0H1.48C.66 0 0 .66 0 1.48v17.04c0 .82.66 1.48 1.48 1.48h17.04c.82 0 1.48-.66 1.48-1.48V1.48C20 .66 19.34 0 18.52 0zM6 17H3V7.5h3V17zM4.5 6.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM17 17h-3v-4.7c0-1.1 0-2.5-1.5-2.5s-1.7 1.2-1.7 2.4V17h-3V7.5h2.9v1.3h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V17z" />
+                    </svg>
+                    <span>LinkedIn</span>
+                </button>
+            </div>
+
+            <div class="auth-divider">
+                <span>Or sign up with email</span>
+            </div>
+
+            <!-- Signup Form -->
+            <form id="signupForm" data-validate>
+                <!-- Step 1: Account Info -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-group">
+                        <label for="fullName" class="form-label">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Jordan Smith"
+                            required>
+                    </div>
+
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+
+                <!-- Step 2: Profile Setup -->
+                <div class="form-step" data-step="2">
+                    <button type="button" class="btn btn-primary" onclick="nextStep()" style="flex: 2;">
+                        <span>Continue</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+        </div>
+
+        <!-- Step 3: Preferences -->
+        <div class="form-step" data-step="3">
+            <div class="form-group">
+                <label class="form-label">Work Style</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm);">
+                    <label
+                        style="display: flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; padding: var(--spacing-sm); background: var(--color-surface-elevated); border-radius: var(--radius-md);">
+                        <input type="radio" name="workStyle" value="focused" class="form-radio">
+                        <span style="font-size: var(--font-size-sm);">Focused</span>
+                    </label>
+                    <label
+                        style="display: flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; padding: var(--spacing-sm); background: var(--color-surface-elevated); border-radius: var(--radius-md);">
+                        <input type="radio" name="workStyle" value="collaborative" class="form-radio">
+                        <span style="font-size: var(--font-size-sm);">Collaborative</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Interests (select all that apply)</label>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-xs);">
+                    <label class="badge badge-primary" style="cursor: pointer;">
+                        <input type="checkbox" name="interests" value="coding" style="margin-right: 0.25rem;">
+                        <span>Coding</span>
+                    </label>
+                    <label class="badge badge-primary" style="cursor: pointer;">
+                        <input type="checkbox" name="interests" value="design" style="margin-right: 0.25rem;">
+                        <span>Design</span>
+                    </label>
+                    <label class="badge badge-primary" style="cursor: pointer;">
+                        <input type="checkbox" name="interests" value="writing" style="margin-right: 0.25rem;">
+                        <span>Writing</span>
+                    </label>
+                    <label class="badge badge-primary" style="cursor: pointer;">
+                        <input type="checkbox" name="interests" value="studying" style="margin-right: 0.25rem;">
+                        <span>Studying</span>
+                    </label>
+                    <label class="badge badge-primary" style="cursor: pointer;">
+                        <input type="checkbox" name="interests" value="business" style="margin-right: 0.25rem;">
+                        <span>Business</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label style="display: flex; align-items: center; gap: var(--spacing-xs); cursor: pointer;">
+                    <input type="checkbox" name="terms" class="form-checkbox" required>
+                    <span style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">
+                        I agree to the <a href="#" style="color: var(--color-primary-light);">Terms &
+                            Conditions</a> and <a href="#" style="color: var(--color-primary-light);">Privacy
+                            Policy</a>
+                    </span>
+                </label>
+            </div>
+
+            <div style="display: flex; gap: var(--spacing-md);">
+                <button type="button" class="btn btn-secondary" onclick="prevStep()" style="flex: 1;">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    <span>Back</span>
+                </button>
+                <button type="submit" class="btn btn-primary" style="flex: 2;" data-original-text="Create Account">
+                    <span>Create Account</span>
+                    <span class="material-symbols-outlined">check_circle</span>
+                </button>
+            </div>
+        </div>
+        </form>
+
+        <div class="auth-footer">
+            <p>Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+    </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script>
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                // Hide current step
+                document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+                document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('completed');
+                document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
+
+                // Show next step
+                currentStep++;
+                document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+                document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.add('active');
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                // Hide current step
+                document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+                document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('active');
+
+                // Show previous step
+                currentStep--;
+                document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+                document.querySelector(`.progress-step[data-step="${currentStep}"]`).classList.remove('completed');
+            }
+        }
+    </script>
+</body>
+
+</html>

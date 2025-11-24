@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - BuddyBloc Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header"><a href="index.html" class="logo">
+                    <div class="logo-icon">B</div><span>BuddyBloc Admin</span>
+                </a></div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item"><span
+                        class="material-symbols-outlined">dashboard</span><span>Overview</span></a>
+                <a href="admin-users.html" class="nav-item"><span
+                        class="material-symbols-outlined">group</span><span>Users</span></a>
+                <a href="admin-content.html" class="nav-item"><span
+                        class="material-symbols-outlined">edit_note</span><span>Content</span></a>
+                <a href="admin-analytics.html" class="nav-item active"><span
+                        class="material-symbols-outlined">analytics</span><span>Analytics</span></a>
+                <a href="admin-moderation.html" class="nav-item"><span
+                        class="material-symbols-outlined">shield</span><span>Moderation</span></a>
+                <a href="admin-settings.html" class="nav-item"><span
+                        class="material-symbols-outlined">settings</span><span>Settings</span></a>
+                <a href="admin-team.html" class="nav-item"><span
+                        class="material-symbols-outlined">admin_panel_settings</span><span>Team</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1 style="font-size:var(--font-size-3xl)">Analytics & Reports</h1>
+                <div style="display:flex;gap:var(--spacing-sm)">
+                    <select class="form-select">
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                        <option>Last 90 days</option>
+                    </select>
+                    <button class="btn btn-primary"><span class="material-symbols-outlined">download</span><span>Export
+                            Report</span></button>
+                </div>
+            </header>
+
+            <div class="dashboard-body">
+                <!-- KPIs -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Users</div>
+                        <div class="stat-value">10,247</div>
+                        <div class="stat-change positive">+12% vs last period</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Active Users (30d)</div>
+                        <div class="stat-value">8,921</div>
+                        <div class="stat-change positive">87% engagement</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Total Sessions</div>
+                        <div class="stat-value">45,892</div>
+                        <div class="stat-change positive">+18% vs last period</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Avg Session Duration</div>
+                        <div class="stat-value">1.8h</div>
+                        <div class="stat-change positive">+5min vs last period</div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div
+                    style="display:grid;grid-template-columns:2fr 1fr;gap:var(--spacing-xl);margin-bottom:var(--spacing-xl)">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">User Growth Trend</h2>
+                        </div>
+                        <div class="card-body">
+                            <div
+                                style="height:300px;background:var(--color-surface-elevated);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center">
+                                <p style="color:var(--color-text-muted)">📈 Line chart - User growth over time</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">User Distribution</h2>
+                        </div>
+                        <div class="card-body">
+                            <div
+                                style="height:300px;background:var(--color-surface-elevated);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center">
+                                <p style="color:var(--color-text-muted)">🥧 Pie chart - User segments</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--spacing-xl)">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Top Features</h2>
+                        </div>
+                        <div class="card-body">
+                            <div
+                                style="display:flex;justify-content:space-between;padding:var(--spacing-sm) 0;border-bottom:1px solid var(--color-border)">
+                                <span>Focus Sessions</span><strong>89%</strong>
+                            </div>
+                            <div
+                                style="display:flex;justify-content:space-between;padding:var(--spacing-sm) 0;border-bottom:1px solid var(--color-border)">
+                                <span>Chat Messages</span><strong>76%</strong>
+                            </div>
+                            <div
+                                style="display:flex;justify-content:space-between;padding:var(--spacing-sm) 0;border-bottom:1px solid var(--color-border)">
+                                <span>Matchmaking</span><strong>68%</strong>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;padding:var(--spacing-sm) 0">
+                                <span>Goal Tracking</span><strong>54%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="card-title">Retention Metrics</h2>
+                        </div>
+                        <div class="card-body">
+                            <div
+                                style="display:flex;justify-content:space-between;padding:var(--spacing-sm) 0;border-bottom:1px solid var(--color-border)">
+                                <span>Day 1 Retention</span><strong style="color:#4ADE80">92%</strong>
+                            </div>
+                            <div
+                                style="display:flex;justify-content:space-between;padding:var(--spacing-sm) 0;border-bottom:1px solid var(--color-border)">
+                                <span>Day 7 Retention</span><strong style="color:#4ADE80">78%</strong>
+                            </div>
+                            <div
+                                style="display:flex;justify-content:space-between;padding:var(--spacing-sm) 0;border-bottom:1px solid var(--color-border)">
+                                <span>Day 30 Retention</span><strong style="color:#FBBF24">64%</strong>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;padding:var(--spacing-sm) 0">
+                                <span>Churn Rate</span><strong style="color:#EF4444">8%</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

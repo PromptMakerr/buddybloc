@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compose New Message</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#427cf0", // Using a modern blue instead of the requested light blue for better contrast/modern feel
+              "background-light": "#F0F2F5",
+              "background-dark": "#101622",
+              "content-light": "#FFFFFF",
+              "content-dark": "#182030",
+              "text-primary-light": "#333333",
+              "text-primary-dark": "#E0E0E0",
+              "text-secondary-light": "#6b7280",
+              "text-secondary-dark": "#9ca3af",
+              "accent": "#89CFF0"
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            boxShadow: {
+              'primary-glow': '0 10px 15px -3px rgba(66, 124, 240, 0.3), 0 4px 6px -4px rgba(66, 124, 240, 0.3)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 justify-between sticky top-0 z-10">
+<button class="flex size-10 items-center justify-center rounded-full text-text-primary-light dark:text-text-primary-dark hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<h1 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">New Message</h1>
+<div class="w-10"></div> <!-- Spacer -->
+</header>
+<!-- Main Content Area -->
+<main class="flex flex-1 flex-col bg-content-light dark:bg-content-dark rounded-t-lg shadow-lg">
+<div class="flex-1 p-4 space-y-4">
+<!-- Recipient Input Field -->
+<div class="flex flex-col">
+<label class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium pb-2" for="to-field">To:</label>
+<div class="flex w-full items-center rounded-lg bg-background-light dark:bg-background-dark p-1.5 focus-within:ring-2 focus-within:ring-primary">
+<!-- Recipient Tags -->
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="flex items-center gap-1.5 bg-primary/20 text-primary dark:bg-primary/30 dark:text-white/80 rounded-full px-3 py-1 text-sm font-medium">
+                                Elara Vance
+                                <button>
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</span>
+</div>
+<input class="form-input flex-1 resize-none overflow-hidden text-text-primary-light dark:text-text-primary-dark focus:outline-0 focus:ring-0 border-none bg-transparent placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark p-2 text-base font-normal leading-normal" id="to-field" placeholder="Add recipient..."/>
+</div>
+</div>
+<!-- Subject Input Field -->
+<div class="flex flex-col">
+<label class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium pb-2" for="subject-field">Subject</label>
+<input class="form-input w-full resize-none overflow-hidden rounded-lg text-text-primary-light dark:text-text-primary-dark focus:outline-none focus:ring-2 focus:ring-primary border-none bg-background-light dark:bg-background-dark h-12 placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark p-3 text-base font-normal leading-normal" id="subject-field" placeholder="Enter subject"/>
+</div>
+<!-- Message Body Text Area -->
+<div class="flex flex-col flex-1 h-full">
+<textarea class="form-input w-full min-h-[30vh] flex-1 resize-none overflow-hidden rounded-lg text-text-primary-light dark:text-text-primary-dark focus:outline-none focus:ring-2 focus:ring-primary border-none bg-background-light dark:bg-background-dark placeholder:text-text-secondary-light dark:placeholder:text-text-secondary-dark p-3 text-base font-normal leading-normal" placeholder="Compose your message..."></textarea>
+</div>
+</div>
+<!-- Toolbar -->
+<div class="flex justify-start gap-1 p-2 border-t border-gray-200 dark:border-gray-700 bg-content-light dark:bg-content-dark">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-primary-light dark:text-text-primary-dark transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-primary-light dark:text-text-primary-dark transition-colors">
+<span class="material-symbols-outlined">image</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-primary-light dark:text-text-primary-dark transition-colors">
+<span class="material-symbols-outlined">format_bold</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 text-text-primary-light dark:text-text-primary-dark transition-colors">
+<span class="material-symbols-outlined">format_italic</span>
+</button>
+</div>
+</main>
+<!-- Bottom Action Button -->
+<footer class="sticky bottom-0 p-4 bg-content-light dark:bg-content-dark border-t border-gray-200 dark:border-gray-700">
+<button class="w-full h-14 flex items-center justify-center gap-3 rounded-full text-white text-lg font-bold bg-gradient-to-b from-primary to-[#3a6fe4] shadow-primary-glow hover:opacity-90 active:scale-[0.98] transition-all duration-200" style="background-image: linear-gradient(to bottom, #5d8ef2, #427cf0);">
+                Send
+                <span class="material-symbols-outlined">send</span>
+</button>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Messages - Elemental AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .pinstripe {
+      background-image: repeating-linear-gradient(
+        45deg,
+        rgba(236, 239, 241, 0.5),
+        rgba(236, 239, 241, 0.5) 1px,
+        transparent 1px,
+        transparent 10px
+      );
+    }
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#427cf0",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Public Sans", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative mx-auto flex h-auto min-h-screen w-full max-w-md flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-[#333333] dark:text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</div>
+<h1 class="text-[#333333] dark:text-white text-xl font-bold leading-tight tracking-tight flex-1 text-center">Messages</h1>
+<div class="text-[#333333] dark:text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+</div>
+</div>
+<!-- Segmented Buttons -->
+<div class="flex px-4 py-3 bg-background-light dark:bg-background-dark">
+<div class="flex h-12 flex-1 items-center justify-center rounded-full bg-[#E8EDF5] dark:bg-gray-800 p-1.5">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-md has-[:checked]:text-[#333333] dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal transition-all duration-300">
+<span class="truncate">Inbox</span>
+<input checked="" class="invisible w-0" name="message-tabs" type="radio" value="Inbox"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-full px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-md has-[:checked]:text-[#333333] dark:has-[:checked]:text-white text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal transition-all duration-300">
+<span class="truncate">Outbox</span>
+<input class="invisible w-0" name="message-tabs" type="radio" value="Outbox"/>
+</label>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-2 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-full h-full">
+<div class="text-gray-500 flex border-none bg-[#E8EDF5] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-full border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-full text-[#333333] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#E8EDF5] dark:bg-gray-800 focus:border-none h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 pl-2 text-base font-normal leading-normal" placeholder="Search messages..."/>
+</div>
+</label>
+</div>
+<!-- Message List -->
+<div class="flex flex-col flex-1 pb-4">
+<!-- Unread Message Item -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900/50 pinstripe px-4 py-4 m-2 rounded-lg shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Sarah Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATWvX4jkZrJ6HkDk92AY7EQ6LUqtz-PL3KFasxZAQ6m0lPKrDFL_kaFH2qeVEtIPN8OVn2yZhBTzHtQRLugwwhhX7_0HSqkUMbHLQNVOKKlT2RWEbcjPuP3BQK9BJKcM0kIhjunrOWLrQSapPY5-EbPAND7GIUL7WeMctfCLZsC7z93SzZ3pOTDwpaqxXIcx-UPCBs2OrVIq96pnP8LIj9UQU0FWafZYU6bZDiOy5tPBMOvMBxORdw5E2RQfuvKpES0OA3IPB2Nh6x");'></div>
+<span class="absolute top-0 right-0 block h-3 w-3 rounded-full bg-[#89CFF0] ring-2 ring-white dark:ring-gray-900/50"></span>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-0.5 min-w-0">
+<p class="text-[#333333] dark:text-white text-base font-bold leading-normal truncate">Sarah Chen</p>
+<p class="text-gray-600 dark:text-gray-300 text-sm font-normal leading-normal truncate">That sounds great! I'll prepare the initial prompts and share them by EOD.</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-[#89CFF0] text-sm font-medium leading-normal">9:41 AM</p>
+<div class="mt-1 flex justify-end">
+<span class="flex items-center justify-center h-5 w-5 bg-[#89CFF0] text-white text-xs font-bold rounded-full">2</span>
+</div>
+</div>
+</div>
+<!-- Read Message Item -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900/50 pinstripe px-4 py-4 m-2 rounded-lg shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Elemental AI Assistant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAa7jXUZdj5l_vzRaGBXn6gKxsJn6IwCmpyZBYIckut9hsnOR1KrrforQZB7l8Tf1aMr8z27BT81iGr-SiUBT0Y216ymRI9I8z--XdloDZEaF2n3jVTeCWOzyEJygOxvukF5lhiKbglkfYZ1jH0cXBKGTmPRdqDoTSPR2xCkGU52KcgarMeL14k7g9Zcfmgm01T0qWMbB8MjN-zyM4AeguPQnW13-Vs7VH22B3SvpkF-4i9c4r-rQJH8RmodFAvqe4OUHX-hh3l3H4z");'></div>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-0.5 min-w-0">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal truncate">Elemental AI Assistant</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal truncate">Welcome to your AI Prompt System! Let us know if you need any help getting started.</p>
+</div>
+</div>
+<div class="shrink-0">
+<p class="text-gray-400 dark:text-gray-500 text-sm font-normal leading-normal">Yesterday</p>
+</div>
+</div>
+<!-- Read Message Item -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900/50 pinstripe px-4 py-4 m-2 rounded-lg shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Alex Johnson" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaPOx1kBNYc6qltF3cwidHdVdFU-wFN7K6lR6u0rQyt5fxeC4iiYfS_6E7OFZSd6fYxxdB16K5YoAOCQ-Xmsvj6dDrTf1lDslOK98bpVng-7752_rlTxbLb-CMDwcOADflsAL4JryG83s9ULVVzjWCNAVGBbV-67uPaz3AFfM9P6WhtyGuLm0Raudc5-mPFOKNTeHLStSR9HSUseBohOeTCA3V6Tz3dnhN74K8x0dehm6jOu8E3y8GnMYrRwNa7E5pZspR4gBJzbZj");'></div>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-0.5 min-w-0">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal truncate">Alex Johnson</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal truncate">Project Collaboration: Reviewed the latest prompts, have some feedback for you.</p>
+</div>
+</div>
+<div class="shrink-0">
+<p class="text-gray-400 dark:text-gray-500 text-sm font-normal leading-normal">3d ago</p>
+</div>
+</div>
+<!-- Read Message Item -->
+<div class="flex items-center gap-4 bg-white dark:bg-gray-900/50 pinstripe px-4 py-4 m-2 rounded-lg shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative shrink-0">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="Profile picture of Maria Garcia" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQjLdn_3ffIaoKBSZ6-cB7bsqy1xGpHhnPnNtdXB0h-_eh3s0zyGfu5d3-2Ol1S4Cc_6nNxcQXUe0EKFuzfbpwhq8AFgnNP92sm_t8_tdseNz7nAoIu5U7JcmOSfs9QirCMb5S1eWYJplUB9kHaVucZJ5brW5HWaHidapFevfu2Fhuy87TpW_QxNvPqH_ooy8ZrPaQJvqLerz1NZy5LVHbDT-bD7zkjWFzyIbsYvH5plmAnYn0GRPwQQ3aZ-SNeuADPlDAC3wmwmqW");'></div>
+</div>
+<div class="flex flex-1 flex-col justify-center gap-0.5 min-w-0">
+<p class="text-[#333333] dark:text-white text-base font-medium leading-normal truncate">Maria Garcia</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal truncate">Quick question about the prompt limits for the free tier...</p>
+</div>
+</div>
+<div class="shrink-0">
+<p class="text-gray-400 dark:text-gray-500 text-sm font-normal leading-normal">Mar 21</p>
+</div>
+</div>
+</div>
+</div>
+</body></html>

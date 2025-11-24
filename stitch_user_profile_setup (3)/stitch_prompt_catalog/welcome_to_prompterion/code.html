@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prompterion Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#427cf0",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-hidden font-display" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+<div class="absolute inset-0 z-0">
+<div class="absolute -top-1/4 -left-1/4 h-1/2 w-1/2 rounded-full bg-[#89CFF0]/20 blur-3xl"></div>
+<div class="absolute bottom-0 -right-1/4 h-1/2 w-1/2 rounded-full bg-[#F0F2F5]/40 blur-3xl"></div>
+</div>
+<div class="relative z-10 flex flex-col items-center justify-between flex-grow p-6">
+<div class="flex-grow flex flex-col items-center justify-center text-center">
+<div class="flex items-center justify-center w-24 h-24 bg-white rounded-full shadow-lg mb-6">
+<span class="material-symbols-outlined text-5xl text-[#333333]">auto_awesome</span>
+</div>
+<h2 class="text-[#333333] tracking-tight text-[28px] font-bold leading-tight">Prompterion</h2>
+<p class="text-[#4A4A4A] text-lg font-normal leading-normal mt-2">The elemental AI prompt system.</p>
+<div class="mt-16 w-full max-w-sm">
+<p class="text-[#4A4A4A] text-base font-normal leading-normal px-4 text-center">Unlock creative potential by mastering the elements of AI communication.</p>
+</div>
+</div>
+<div class="w-full max-w-sm pb-8">
+<div class="flex px-4 py-3">
+<button class="relative flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 flex-1 bg-[#89CFF0] text-[#333333] text-lg font-bold leading-normal tracking-[0.015em] shadow-[0_10px_20px_-10px_rgba(137,207,240,0.9)] transition-transform duration-200 hover:scale-105">
+<span class="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent"></span>
+<span class="truncate z-10">Get Started</span>
+</button>
+</div>
+<div class="flex w-full flex-row items-center justify-center gap-3 py-5">
+<div class="h-2 w-2 rounded-full bg-[#89CFF0]"></div>
+<div class="h-2 w-2 rounded-full bg-[#F0F2F5]"></div>
+<div class="h-2 w-2 rounded-full bg-[#F0F2F5]"></div>
+<div class="h-2 w-2 rounded-full bg-[#F0F2F5]"></div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - BuddyBloc</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        rel="stylesheet">
+
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .profile-header {
+            background: var(--gradient-primary);
+            padding: var(--spacing-3xl) var(--spacing-xl);
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-avatar-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--color-primary);
+            margin: 0 auto var(--spacing-md);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .badges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .review-item {
+            background: var(--color-surface-elevated);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            margin-bottom: var(--spacing-md);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar (same as dashboard) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">B</div>
+                    <span>BuddyBloc</span>
+                </a>
+            </div>
+            <div class="user-profile-card">
+                <div class="user-profile-header">
+                    <div class="avatar avatar-lg">
+                        <div class="avatar-status online"></div>JS
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 0.25rem;">Jordan Smith</h3>
+                        <div class="rating-display" style="font-size: var(--font-size-sm);">
+                            <div class="rating-stars">
+                                <span class="star active">★</span><span class="star active">★</span><span
+                                    class="star active">★</span><span class="star active">★</span><span
+                                    class="star active">★</span>
+                            </div>
+                            <span class="rating-value">4.8</span>
+                        </div>
+                        <div class="reliability-score" style="margin-top: 0.5rem; padding: 0.25rem 0.75rem;">
+                            <span class="reliability-percentage" style="font-size: var(--font-size-base);">96%</span>
+                            <span class="reliability-label" style="font-size: var(--font-size-xs);">Reliable</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="badges-mini">
+                    <span class="badge-mini">🎉</span><span class="badge-mini">🔥</span><span
+                        class="badge-mini">🥉</span>
+                </div>
+                <div class="user-stats">
+                    <div class="user-stat">
+                        <div class="user-stat-value">127</div>
+                        <div class="user-stat-label">Sessions</div>
+                    </div>
+                    <div class="user-stat">
+                        <div class="user-stat-value">15</div>
+                        <div class="user-stat-label">Streak</div>
+                    </div>
+                    <div class="user-stat">
+                        <div class="user-stat-value">12</div>
+                        <div class="user-stat-label">Badges</div>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item"><span
+                        class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+                <a href="matchmaking.html" class="nav-item"><span
+                        class="material-symbols-outlined">group_add</span><span>Find Buddy</span></a>
+                <a href="chat.html" class="nav-item"><span
+                        class="material-symbols-outlined">chat</span><span>Messages</span></a>
+                <a href="profile.html" class="nav-item active"><span
+                        class="material-symbols-outlined">person</span><span>Profile</span></a>
+                <a href="settings.html" class="nav-item"><span
+                        class="material-symbols-outlined">settings</span><span>Settings</span></a>
+                <div style="margin: var(--spacing-md) 0; height: 1px; background: var(--color-border);"></div>
+                <a href="login.html" class="nav-item"><span
+                        class="material-symbols-outlined">logout</span><span>Logout</span></a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-avatar-large">JS</div>
+                <h1 style="color: white; margin-bottom: 0.5rem;">Jordan Smith</h1>
+                <p
+                    style="color: rgba(255, 255, 255, 0.9); font-size: var(--font-size-lg); margin-bottom: var(--spacing-md);">
+                    Software Developer | Remote Work Enthusiast</p>
+
+                <!-- Trust Indicators -->
+                <div
+                    style="display: flex; justify-content: center; gap: var(--spacing-md); flex-wrap: wrap; margin-bottom: var(--spacing-md);">
+                    <div class="badge badge-verified"><span class="material-symbols-outlined"
+                            style="font-size: 1rem;">verified</span><span>Email</span></div>
+                    <div class="badge badge-verified"><span class="material-symbols-outlined"
+                            style="font-size: 1rem;">verified</span><span>LinkedIn</span></div>
+                    <div class="badge badge-verified"><span class="material-symbols-outlined"
+                            style="font-size: 1rem;">verified</span><span>Phone</span></div>
+                </div>
+
+                <div
+                    style="display: flex; justify-content: center; align-items: center; gap: var(--spacing-xl); color: white;">
+                    <div>
+                        <div class="rating-display" style="justify-content: center; margin-bottom: 0.25rem;">
+                            <div class="rating-stars">
+                                <span class="star active">★</span><span class="star active">★</span><span
+                                    class="star active">★</span><span class="star active">★</span><span
+                                    class="star active">★</span>
+                            </div>
+                            <span class="rating-value" style="color: white;">4.8</span>
+                        </div>
+                        <div style="font-size: var(--font-size-sm); opacity: 0.9;">127 reviews</div>
+                    </div>
+                    <div style="width: 1px; height: 40px; background: rgba(255, 255, 255, 0.3);"></div>
+                    <div>
+                        <div style="font-size: var(--font-size-2xl); font-weight: 700;">96%</div>
+                        <div style="font-size: var(--font-size-sm); opacity: 0.9;">Reliability</div>
+                    </div>
+                    <div style="width: 1px; height: 40px; background: rgba(255, 255, 255, 0.3);"></div>
+                    <div>
+                        <div style="font-size: var(--font-size-2xl); font-weight: 700;">~2h</div>
+                        <div style="font-size: var(--font-size-sm); opacity: 0.9;">Response Time</div>
+                    </div>
+                </div>
+
+                <button class="btn btn-white" style="margin-top: var(--spacing-lg);"><span
+                        class="material-symbols-outlined">edit</span><span>Edit Profile</span></button>
+            </div>
+
+            <div class="dashboard-body">
+                <!-- Stats Overview -->
+                <div class="stats-grid" style="margin-bottom: var(--spacing-xl);">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Sessions</div>
+                        <div class="stat-value">127</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Hours Focused</div>
+                        <div class="stat-value">342</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Current Streak</div>
+                        <div class="stat-value">15 🔥</div>
+                        <div class="stat-change">Best: 28 days</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Badges Earned</div>
+                        <div class="stat-value">12</div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-xl);">
+                    <div>
+                        <!-- Badges Showcase -->
+                        <div class="card" style="margin-bottom: var(--spacing-xl);">
+                            <div class="card-header">
+                                <h2 class="card-title">🏆 Badges Earned</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="badges-grid">
+                                    <div class="achievement-badge">
+                                        <div class="achievement-badge-icon">🎉</div>
+                                        <div class="achievement-badge-name">Welcome</div>
+                                        <div class="achievement-badge-desc">Joined BuddyBloc</div>
+                                    </div>
+                                    <div class="achievement-badge">
+                                        <div class="achievement-badge-icon">⏱️</div>
+                                        <div class="achievement-badge-name">First Session</div>
+                                        <div class="achievement-badge-desc">Completed 1 session</div>
+                                    </div>
+                                    <div class="achievement-badge">
+                                        <div class="achievement-badge-icon">🔥</div>
+                                        <div class="achievement-badge-name">7-Day Streak</div>
+                                        <div class="achievement-badge-desc">7 days in a row</div>
+                                    </div>
+                                    <div class="achievement-badge">
+                                        <div class="achievement-badge-icon">🥉</div>
+                                        <div class="achievement-badge-name">Bronze Buddy</div>
+                                        <div class="achievement-badge-desc">10 sessions</div>
+                                    </div>
+                                    <div class="achievement-badge">
+                                        <div class="achievement-badge-icon">💻</div>
+                                        <div class="achievement-badge-name">Code Warrior</div>
+                                        <div class="achievement-badge-desc">25 coding sessions</div>
+                                    </div>
+                                    <div class="achievement-badge">
+                                        <div class="achievement-badge-icon">🌅</div>
+                                        <div class="achievement-badge-name">Early Bird</div>
+                                        <div class="achievement-badge-desc">10 morning sessions</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Reviews Section -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">⭐ Reviews</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="review-item">
+                                    <div
+                                        style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-sm);">
+                                        <div class="avatar avatar-md">SL</div>
+                                        <div style="flex: 1;">
+                                            <h4 style="margin-bottom: 0.25rem;">Sarah Lane</h4>
+                                            <div class="rating-display" style="font-size: var(--font-size-sm);">
+                                                <div class="rating-stars">
+                                                    <span class="star active">★</span><span
+                                                        class="star active">★</span><span
+                                                        class="star active">★</span><span
+                                                        class="star active">★</span><span class="star active">★</span>
+                                                </div>
+                                                <span class="rating-value">5.0</span>
+                                            </div>
+                                        </div>
+                                        <span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">2
+                                            days ago</span>
+                                    </div>
+                                    <p style="color: var(--color-text-secondary);">"Jordan is an amazing accountability
+                                        partner! Always on time, super focused, and creates a great productive
+                                        atmosphere. Highly recommend!"</p>
+                                </div>
+
+                                <div class="review-item">
+                                    <div
+                                        style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-sm);">
+                                        <div class="avatar avatar-md">MW</div>
+                                        <div style="flex: 1;">
+                                            <h4 style="margin-bottom: 0.25rem;">Michael Wong</h4>
+                                            <div class="rating-display" style="font-size: var(--font-size-sm);">
+                                                <div class="rating-stars">
+                                                    <span class="star active">★</span><span
+                                                        class="star active">★</span><span
+                                                        class="star active">★</span><span
+                                                        class="star active">★</span><span class="star active">★</span>
+                                                </div>
+                                                <span class="rating-value">5.0</span>
+                                            </div>
+                                        </div>
+                                        <span style="font-size: var(--font-size-sm); color: var(--color-text-muted);">1
+                                            week ago</span>
+                                    </div>
+                                    <p style="color: var(--color-text-secondary);">"Great buddy to work with. Very
+                                        reliable and motivating!"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Info -->
+                    <div>
+                        <!-- Work Preferences -->
+                        <div class="card" style="margin-bottom: var(--spacing-lg);">
+                            <div class="card-header">
+                                <h3 class="card-title" style="font-size: var(--font-size-lg);">Work Preferences</h3>
+                            </div>
+                            <div class="card-body">
+                                <div style="margin-bottom: var(--spacing-md);">
+                                    <div
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: 0.25rem;">
+                                        Work Style</div>
+                                    <div class="badge badge-primary">Focused</div>
+                                </div>
+                                <div style="margin-bottom: var(--spacing-md);">
+                                    <div
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: 0.25rem;">
+                                        Interests</div>
+                                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                        <span class="badge badge-primary">Coding</span>
+                                        <span class="badge badge-primary">Design</span>
+                                        <span class="badge badge-primary">Writing</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: 0.25rem;">
+                                        Timezone</div>
+                                    <div style="color: var(--color-text-primary);">CET (UTC+1)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Member Since -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div style="text-align: center;">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size: 3rem; color: var(--color-primary); margin-bottom: var(--spacing-sm);">calendar_today</span>
+                                    <div
+                                        style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin-bottom: 0.25rem;">
+                                        Member Since</div>
+                                    <div style="font-weight: 700; color: var(--color-text-primary);">January 2024</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

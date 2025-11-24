@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>View Full Message</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#427cf0",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glossy-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+        .glossy-card-dark {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(30, 41, 59, 0.5) 100%);
+        }
+        .glossy-button-primary {
+            background: linear-gradient(135deg, #427cf0 0%, #3a6dd8 100%);
+            box-shadow: 0 4px 15px 0 rgba(66, 124, 240, 0.3);
+            transition: all 0.2s ease-in-out;
+        }
+        .glossy-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px 0 rgba(66, 124, 240, 0.4);
+        }
+        .glossy-button-secondary {
+            background: linear-gradient(135deg, rgba(231, 235, 243, 0.9) 0%, rgba(231, 235, 243, 0.7) 100%);
+            transition: all 0.2s ease-in-out;
+        }
+         .glossy-button-secondary:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(231, 235, 243, 1) 0%, rgba(231, 235, 243, 0.9) 100%);
+        }
+        .glossy-button-secondary-dark {
+             background: linear-gradient(135deg, rgba(51, 65, 85, 0.9) 0%, rgba(51, 65, 85, 0.7) 100%);
+        }
+        .glossy-button-secondary-dark:hover {
+            background: linear-gradient(135deg, rgba(51, 65, 85, 1) 0%, rgba(51, 65, 85, 0.9) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 pb-2 backdrop-blur-sm">
+<button class="text-slate-800 dark:text-slate-200 flex size-10 shrink-0 items-center justify-center rounded-full bg-slate-200/50 dark:bg-slate-700/50">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+</div>
+<main class="flex-1 px-4 pb-32">
+<!-- Metadata Card -->
+<div class="mt-2">
+<div class="flex flex-col items-stretch justify-start rounded-xl p-4 glossy-card dark:glossy-card-dark dark:border-slate-700">
+<p class="text-primary text-sm font-bold leading-normal">Subject</p>
+<p class="text-slate-900 dark:text-slate-50 text-xl font-bold leading-tight tracking-[-0.015em] mt-1">Re: Project Update &amp; Next Steps</p>
+<div class="mt-4 border-t border-slate-200 dark:border-slate-700 pt-4 flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+<span class="text-lg font-bold text-blue-600 dark:text-blue-300">AJ</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">From</p>
+<p class="text-slate-800 dark:text-slate-200 text-sm font-semibold leading-normal">Alex Johnson</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900">
+<span class="text-lg font-bold text-indigo-600 dark:text-indigo-300">Me</span>
+</div>
+<div class="flex-1">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal">To</p>
+<p class="text-slate-800 dark:text-slate-200 text-sm font-semibold leading-normal">Me (you@company.com)</p>
+</div>
+</div>
+</div>
+<div class="mt-4 border-t border-slate-200 dark:border-slate-700 pt-3">
+<p class="text-slate-500 dark:text-slate-400 text-xs font-normal leading-normal text-right">Today, 10:45 AM</p>
+</div>
+</div>
+</div>
+<!-- Body Text -->
+<div class="mt-6">
+<p class="text-slate-800 dark:text-slate-300 text-base font-normal leading-relaxed">
+                Hi team,
+            </p>
+<p class="text-slate-800 dark:text-slate-300 text-base font-normal leading-relaxed mt-4">
+                Following up on our discussion yesterday, I've attached the revised project timeline for your review. Please pay close attention to the updated deadlines for Phase 2 deliverables. We need to ensure we're aligned on these changes before the client meeting on Friday.
+            </p>
+<p class="text-slate-800 dark:text-slate-300 text-base font-normal leading-relaxed mt-4">
+                Let me know if you have any questions or feedback by end of day tomorrow.
+            </p>
+<p class="text-slate-800 dark:text-slate-300 text-base font-normal leading-relaxed mt-4">
+                Best,
+            </p>
+<p class="text-slate-800 dark:text-slate-300 text-base font-normal leading-relaxed">
+                Alex
+            </p>
+</div>
+</main>
+<!-- Floating Action Button Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-10 p-4 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent">
+<div class="flex w-full gap-3 justify-between">
+<button class="glossy-button-secondary dark:glossy-button-secondary-dark flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 text-slate-900 dark:text-slate-50 text-base font-bold leading-normal tracking-[0.015em] shadow-md dark:border dark:border-slate-700">
+<span class="truncate">Delete</span>
+</button>
+<button class="glossy-button-primary flex flex-1 min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Reply</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Moderation Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      .bg-stripes {
+          background-image: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(137, 207, 240, 0.08) 10px, rgba(137, 207, 240, 0.08) 20px);
+      }
+      .btn-glossy {
+        background-image: linear-gradient(to top, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.4));
+      }
+      .btn-glossy:hover {
+        background-image: linear-gradient(to top, hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0.6));
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2b6cee",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "app-bg": "#F5F7FA",
+              "app-card": "#FFFFFF",
+              "app-accent": "#89CFF0",
+              "app-text-primary": "#333333",
+              "app-text-secondary": "#777777"
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            boxShadow: {
+              'soft': '0 4px 12px rgba(0, 0, 0, 0.05)',
+              'soft-hover': '0 6px 16px rgba(0, 0, 0, 0.08)'
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-app-bg font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-app-bg group/design-root overflow-x-hidden bg-stripes">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 bg-app-bg/80 backdrop-blur-sm">
+<div class="flex items-center p-4 justify-between">
+<button class="flex size-10 shrink-0 items-center justify-center text-app-text-primary">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-app-text-primary text-xl font-bold leading-tight tracking-tight flex-1 text-center">Moderation Management</h1>
+<button class="flex size-10 shrink-0 items-center justify-center text-app-text-primary">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<div>
+<div class="flex border-b border-gray-200 px-4">
+<a class="flex flex-1 flex-col items-center justify-center border-b-2 border-app-accent text-app-text-primary pb-3 pt-3" href="#">
+<p class="text-sm font-bold">Prompts</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center border-b-2 border-transparent text-app-text-secondary pb-3 pt-3" href="#">
+<p class="text-sm font-semibold">Community Posts</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center border-b-2 border-transparent text-app-text-secondary pb-3 pt-3" href="#">
+<p class="text-sm font-semibold">Reviews</p>
+</a>
+</div>
+</div>
+<!-- Chips / Filters -->
+<div class="flex gap-3 px-4 py-3 overflow-x-auto">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white pl-4 pr-3 shadow-soft">
+<p class="text-app-text-primary text-sm font-medium">Status: Pending</p>
+<span class="material-symbols-outlined text-app-text-secondary text-base">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white pl-4 pr-3 shadow-soft">
+<p class="text-app-text-primary text-sm font-medium">Sort by: Newest</p>
+<span class="material-symbols-outlined text-app-text-secondary text-base">expand_more</span>
+</button>
+</div>
+<!-- Moderation Item Cards -->
+<div class="flex flex-col gap-4 p-4 pt-2">
+<!-- Card 1 -->
+<div class="flex flex-col items-stretch justify-start rounded-xl bg-app-card shadow-soft">
+<div class="flex w-full flex-col items-stretch justify-center gap-3 p-4">
+<p class="text-app-text-secondary text-xs font-normal">Submitted by @AI_enthusiast • 2h ago</p>
+<p class="text-app-text-primary text-base font-semibold leading-normal">"Elemental AI Prompt: Phoenix"</p>
+<p class="text-app-text-secondary text-sm font-normal leading-relaxed line-clamp-2">
+                        A photorealistic image of a majestic phoenix rising from digital ashes, with wings made of binary code and a body glowing with ethereal light...
+                    </p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 border-t border-gray-100">
+<button class="flex min-w-[36px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-100 text-app-text-secondary transition-all hover:bg-gray-200">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<div class="flex flex-1 gap-3">
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-app-card text-app-accent border-2 border-app-accent text-sm font-bold leading-normal transition-all hover:bg-app-accent/10 shadow-soft hover:shadow-soft-hover">
+<span class="truncate">Reject</span>
+</button>
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-app-accent text-white text-sm font-bold leading-normal transition-all hover:brightness-105 btn-glossy shadow-soft hover:shadow-soft-hover">
+<span class="truncate">Approve</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col items-stretch justify-start rounded-xl bg-app-card shadow-soft">
+<div class="flex w-full flex-col items-stretch justify-center gap-3 p-4">
+<p class="text-app-text-secondary text-xs font-normal">Submitted by @CreativeMind • 5h ago</p>
+<p class="text-app-text-primary text-base font-semibold leading-normal">"Cyberpunk Cityscape Prompt"</p>
+<p class="text-app-text-secondary text-sm font-normal leading-relaxed line-clamp-2">
+                        Create a sprawling, neon-drenched cyberpunk cityscape at night, with flying vehicles weaving between towering skyscrapers. Rain should be falling, reflecting the city lights...
+                    </p>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 border-t border-gray-100">
+<button class="flex min-w-[36px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-100 text-app-text-secondary transition-all hover:bg-gray-200">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<div class="flex flex-1 gap-3">
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-app-card text-app-accent border-2 border-app-accent text-sm font-bold leading-normal transition-all hover:bg-app-accent/10 shadow-soft hover:shadow-soft-hover">
+<span class="truncate">Reject</span>
+</button>
+<button class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-app-accent text-white text-sm font-bold leading-normal transition-all hover:brightness-105 btn-glossy shadow-soft hover:shadow-soft-hover">
+<span class="truncate">Approve</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Empty State View (Example) -->
+<div class="flex flex-col items-center justify-center rounded-xl bg-transparent text-center p-8 mt-4">
+<span class="material-symbols-outlined text-5xl text-app-accent/50 mb-4">task_alt</span>
+<p class="text-lg font-bold text-app-text-primary">Queue Clear!</p>
+<p class="text-app-text-secondary text-sm">No pending items to review.</p>
+</div>
+</div>
+</div>
+</body></html>

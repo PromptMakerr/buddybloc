@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Settings - BuddyBloc Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header"><a href="index.html" class="logo">
+                    <div class="logo-icon">B</div><span>BuddyBloc Admin</span>
+                </a></div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item"><span
+                        class="material-symbols-outlined">dashboard</span><span>Overview</span></a>
+                <a href="admin-users.html" class="nav-item"><span
+                        class="material-symbols-outlined">group</span><span>Users</span></a>
+                <a href="admin-content.html" class="nav-item"><span
+                        class="material-symbols-outlined">edit_note</span><span>Content</span></a>
+                <a href="admin-analytics.html" class="nav-item"><span
+                        class="material-symbols-outlined">analytics</span><span>Analytics</span></a>
+                <a href="admin-moderation.html" class="nav-item"><span
+                        class="material-symbols-outlined">shield</span><span>Moderation</span></a>
+                <a href="admin-settings.html" class="nav-item active"><span
+                        class="material-symbols-outlined">settings</span><span>Settings</span></a>
+                <a href="admin-team.html" class="nav-item"><span
+                        class="material-symbols-outlined">admin_panel_settings</span><span>Team</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1 style="font-size:var(--font-size-3xl)">Platform Settings</h1>
+                <button class="btn btn-primary">Save All Changes</button>
+            </header>
+
+            <div class="dashboard-body">
+                <div data-tab-group style="max-width:900px">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="general">General</div>
+                        <div class="tab" data-tab="security">Security</div>
+                        <div class="tab" data-tab="features">Features</div>
+                        <div class="tab" data-tab="integrations">Integrations</div>
+                    </div>
+
+                    <div class="tab-panel active" data-tab-panel="general">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">General Settings</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group"><label class="form-label">Platform Name</label><input
+                                        type="text" class="form-input" value="BuddyBloc"></div>
+                                <div class="form-group"><label class="form-label">Support Email</label><input
+                                        type="email" class="form-input" value="support@buddybloc.com"></div>
+                                <div class="form-group"><label class="form-label">Default Timezone</label><select
+                                        class="form-select">
+                                        <option>UTC</option>
+                                        <option>CET</option>
+                                        <option>EST</option>
+                                    </select></div>
+                                <div class="form-group">
+                                    <label style="display:flex;align-items:center;gap:var(--spacing-sm);cursor:pointer">
+                                        <input type="checkbox" class="form-checkbox" checked>
+                                        <span>Maintenance Mode</span>
+                                    </label>
+                                    <span class="form-helper">Enable to put platform in maintenance mode</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="security">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Security Settings</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group"><label class="form-label">Minimum Password Length</label><input
+                                        type="number" class="form-input" value="8"></div>
+                                <div class="form-group">
+                                    <label style="display:flex;align-items:center;gap:var(--spacing-sm);cursor:pointer">
+                                        <input type="checkbox" class="form-checkbox" checked>
+                                        <span>Require Two-Factor Authentication</span>
+                                    </label>
+                                </div>
+                                <div class="form-group"><label class="form-label">Session Timeout
+                                        (minutes)</label><input type="number" class="form-input" value="60"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="features">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Feature Flags</h2>
+                            </div>
+                            <div class="card-body">
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md) 0;border-bottom:1px solid var(--color-border)">
+                                    <div>
+                                        <h4>Video Calls</h4>
+                                        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                            Enable video calling feature</p>
+                                    </div>
+                                    <input type="checkbox" checked class="form-checkbox">
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md) 0;border-bottom:1px solid var(--color-border)">
+                                    <div>
+                                        <h4>Badge System</h4>
+                                        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                            Enable gamification badges</p>
+                                    </div>
+                                    <input type="checkbox" checked class="form-checkbox">
+                                </div>
+                                <div
+                                    style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md) 0">
+                                    <div>
+                                        <h4>Referral Program</h4>
+                                        <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                            Enable user referrals</p>
+                                    </div>
+                                    <input type="checkbox" checked class="form-checkbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="integrations">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Third-Party Integrations</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group"><label class="form-label">Google OAuth Client ID</label><input
+                                        type="text" class="form-input" placeholder="Enter client ID"></div>
+                                <div class="form-group"><label class="form-label">LinkedIn OAuth Client ID</label><input
+                                        type="text" class="form-input" placeholder="Enter client ID"></div>
+                                <div class="form-group"><label class="form-label">Analytics Tracking ID</label><input
+                                        type="text" class="form-input" placeholder="G-XXXXXXXXXX"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

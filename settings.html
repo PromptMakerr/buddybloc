@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - BuddyBloc</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header"><a href="index.html" class="logo">
+                    <div class="logo-icon">B</div><span>BuddyBloc</span>
+                </a></div>
+            <div class="user-profile-card">
+                <div class="user-profile-header">
+                    <div class="avatar avatar-lg">
+                        <div class="avatar-status online"></div>JS
+                    </div>
+                    <div style="flex: 1;">
+                        <h3 style="font-size: var(--font-size-base); margin-bottom: 0.25rem;">Jordan Smith</h3>
+                    </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item"><span
+                        class="material-symbols-outlined">dashboard</span><span>Dashboard</span></a>
+                <a href="matchmaking.html" class="nav-item"><span
+                        class="material-symbols-outlined">group_add</span><span>Find Buddy</span></a>
+                <a href="chat.html" class="nav-item"><span
+                        class="material-symbols-outlined">chat</span><span>Messages</span></a>
+                <a href="profile.html" class="nav-item"><span
+                        class="material-symbols-outlined">person</span><span>Profile</span></a>
+                <a href="settings.html" class="nav-item active"><span
+                        class="material-symbols-outlined">settings</span><span>Settings</span></a>
+                <div style="margin: var(--spacing-md) 0; height: 1px; background: var(--color-border);"></div>
+                <a href="login.html" class="nav-item"><span
+                        class="material-symbols-outlined">logout</span><span>Logout</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1 style="font-size: var(--font-size-3xl);">Settings</h1>
+            </header>
+
+            <div class="dashboard-body">
+                <div data-tab-group style="max-width: 900px;">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="account">Account</div>
+                        <div class="tab" data-tab="preferences">Preferences</div>
+                        <div class="tab" data-tab="notifications">Notifications</div>
+                        <div class="tab" data-tab="privacy">Privacy</div>
+                    </div>
+
+                    <!-- Account Tab -->
+                    <div class="tab-panel active" data-tab-panel="account">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Profile Information</h2>
+                            </div>
+                            <div class="card-body">
+                                <form data-validate>
+                                    <div class="form-group"><label class="form-label">Full Name</label><input
+                                            type="text" class="form-input" value="Jordan Smith" required></div>
+                                    <div class="form-group"><label class="form-label">Email</label><input type="email"
+                                            class="form-input" value="jordan@example.com" required></div>
+                                    <div class="form-group"><label class="form-label">Job Title</label><input
+                                            type="text" class="form-input" value="Software Developer"></div>
+                                    <div class="form-group"><label class="form-label">Bio</label><textarea
+                                            class="form-textarea"
+                                            rows="3">Passionate developer who loves remote work and productivity.</textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="card" style="margin-top: var(--spacing-lg);">
+                            <div class="card-header">
+                                <h2 class="card-title">Change Password</h2>
+                            </div>
+                            <div class="card-body">
+                                <form data-validate>
+                                    <div class="form-group"><label class="form-label">Current Password</label><input
+                                            type="password" class="form-input" required></div>
+                                    <div class="form-group"><label class="form-label">New Password</label><input
+                                            type="password" id="newPassword" class="form-input" data-min-length="8"
+                                            required></div>
+                                    <div class="form-group"><label class="form-label">Confirm New Password</label><input
+                                            type="password" class="form-input" data-confirm="newPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update Password</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preferences Tab -->
+                    <div class="tab-panel" data-tab-panel="preferences">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Work Preferences</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label">Work Style</label>
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm);">
+                                        <label
+                                            style="display: flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; padding: var(--spacing-sm); background: var(--color-surface-elevated); border-radius: var(--radius-md);">
+                                            <input type="radio" name="workStyle" value="focused" checked
+                                                class="form-radio"><span>Focused</span>
+                                        </label>
+                                        <label
+                                            style="display: flex; align-items: center; gap: var(--spacing-xs); cursor: pointer; padding: var(--spacing-sm); background: var(--color-surface-elevated); border-radius: var(--radius-md);">
+                                            <input type="radio" name="workStyle" value="collaborative"
+                                                class="form-radio"><span>Collaborative</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Timezone</label>
+                                    <select class="form-select">
+                                        <option value="Europe/Amsterdam" selected>Europe/Amsterdam (CET)</option>
+                                        <option value="Europe/London">Europe/London (GMT)</option>
+                                        <option value="America/New_York">America/New York (EST)</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary">Save Preferences</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Notifications Tab -->
+                    <div class="tab-panel" data-tab-panel="notifications">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Notification Settings</h2>
+                            </div>
+                            <div class="card-body">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-md) 0; border-bottom: 1px solid var(--color-border);">
+                                    <div>
+                                        <h4>Session Reminders</h4>
+                                        <p
+                                            style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0;">
+                                            Get notified before sessions start</p>
+                                    </div>
+                                    <input type="checkbox" checked class="form-checkbox">
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-md) 0; border-bottom: 1px solid var(--color-border);">
+                                    <div>
+                                        <h4>New Messages</h4>
+                                        <p
+                                            style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0;">
+                                            Notify when you receive messages</p>
+                                    </div>
+                                    <input type="checkbox" checked class="form-checkbox">
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-md) 0;">
+                                    <div>
+                                        <h4>Badge Achievements</h4>
+                                        <p
+                                            style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0;">
+                                            Celebrate when you earn badges</p>
+                                    </div>
+                                    <input type="checkbox" checked class="form-checkbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy Tab -->
+                    <div class="tab-panel" data-tab-panel="privacy">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Privacy Controls</h2>
+                            </div>
+                            <div class="card-body">
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-md) 0; border-bottom: 1px solid var(--color-border);">
+                                    <div>
+                                        <h4>Profile Visibility</h4>
+                                        <p
+                                            style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0;">
+                                            Who can see your profile</p>
+                                    </div>
+                                    <select class="form-select" style="width: auto;">
+                                        <option>Everyone</option>
+                                        <option>Buddies Only</option>
+                                        <option>Private</option>
+                                    </select>
+                                </div>
+                                <div
+                                    style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-md) 0;">
+                                    <div>
+                                        <h4>Show Online Status</h4>
+                                        <p
+                                            style="font-size: var(--font-size-sm); color: var(--color-text-muted); margin: 0;">
+                                            Let others see when you're online</p>
+                                    </div>
+                                    <input type="checkbox" checked class="form-checkbox">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

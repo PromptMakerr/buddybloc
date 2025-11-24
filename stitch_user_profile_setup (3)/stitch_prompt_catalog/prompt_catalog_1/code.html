@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Analytics Reports</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .glossy-button {
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+            transition: transform 0.1s ease-in-out;
+        }
+        .glossy-button:hover {
+            transform: scale(1.02);
+        }
+        .subtle-stripes {
+            background-image:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+                linear-gradient(225deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+                linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%),
+                linear-gradient(315deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%);
+            background-size: 8px 8px;
+        }
+        .glossy-accent {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00A3FF",
+              "background-light": "#F8F9FA",
+              "background-dark": "#101622",
+              "section-light": "#EFF2F5",
+              "section-dark": "#1A2233"
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 pt-6 flex items-center justify-between border-b border-section-light dark:border-section-dark">
+<h1 class="text-2xl font-bold text-slate-800 dark:text-white">Analytics</h1>
+<button class="flex items-center justify-center gap-2 rounded-full h-10 px-4 bg-primary text-white text-sm font-medium leading-normal glossy-button">
+<span class="material-symbols-outlined text-base">download</span>
+<span class="truncate">Export</span>
+</button>
+</header>
+<div class="p-4 bg-section-light dark:bg-section-dark subtle-stripes border-b border-slate-200 dark:border-slate-800">
+<div class="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/20 dark:bg-primary/30 pl-4 pr-3 text-primary dark:text-white font-medium">
+<p class="text-sm">Last 30 Days</p>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-slate-700 pl-4 pr-3">
+<p class="text-sm font-medium text-slate-700 dark:text-slate-200">All Metrics</p>
+<span class="material-symbols-outlined text-lg text-slate-500 dark:text-slate-400">expand_more</span>
+</button>
+</div>
+</div>
+<main class="flex-1 p-4 space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col items-start justify-start gap-1 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-md shadow-slate-200/50 dark:shadow-black/20">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Total Users</p>
+<p class="relative text-4xl font-bold text-primary dark:text-primary"><span class="glossy-accent absolute inset-0">12,483</span>12,483</p>
+</div>
+<div class="flex flex-col items-start justify-start gap-1 rounded-xl bg-white dark:bg-slate-800 p-4 shadow-md shadow-slate-200/50 dark:shadow-black/20">
+<p class="text-sm font-medium text-slate-500 dark:text-slate-400">Prompts Sold</p>
+<p class="relative text-4xl font-bold text-primary dark:text-primary"><span class="glossy-accent absolute inset-0">2,109</span>2,109</p>
+</div>
+</div>
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-md shadow-slate-200/50 dark:shadow-black/20 overflow-hidden">
+<div class="p-4 border-b border-section-light dark:border-section-dark">
+<p class="text-slate-800 dark:text-white text-lg font-bold leading-tight">User Growth</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">Last 30 days</p>
+</div>
+<div class="p-4">
+<canvas id="userGrowthChart"></canvas>
+</div>
+</div>
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-md shadow-slate-200/50 dark:shadow-black/20 overflow-hidden">
+<div class="p-4 border-b border-section-light dark:border-section-dark">
+<p class="text-slate-800 dark:text-white text-lg font-bold leading-tight">Top Performing Prompts</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">By sales volume</p>
+</div>
+<div class="p-4">
+<canvas id="topPromptsChart"></canvas>
+</div>
+</div>
+<div class="rounded-xl bg-white dark:bg-slate-800 shadow-md shadow-slate-200/50 dark:shadow-black/20 overflow-hidden">
+<div class="p-4 border-b border-section-light dark:border-section-dark">
+<p class="text-slate-800 dark:text-white text-lg font-bold leading-tight">Category Distribution</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium">By prompts created</p>
+</div>
+<div class="p-4 max-w-[250px] mx-auto">
+<canvas id="categoryDistributionChart"></canvas>
+</div>
+</div>
+</main>
+</div>
+<script>
+    // Shared chart options
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    const gridColor = isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+    const textColor = isDarkMode ? '#E2E8F0' : '#475569';
+    const primaryColor = '#00A3FF';
+    const chartOptions = {
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: gridColor,
+                    borderDash: [2, 4]
+                },
+                ticks: {
+                    color: textColor
+                }
+            },
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: textColor
+                }
+            }
+        },
+        maintainAspectRatio: false
+    };
+    // User Growth Chart (Line)
+    const userGrowthCtx = document.getElementById('userGrowthChart').getContext('2d');
+    new Chart(userGrowthCtx, {
+        type: 'line',
+        data: {
+            labels: ['W1', 'W2', 'W3', 'W4'],
+            datasets: [{
+                label: 'Users',
+                data: [8200, 9300, 11000, 12483],
+                fill: true,
+                backgroundColor: 'rgba(0, 163, 255, 0.1)',
+                borderColor: primaryColor,
+                tension: 0.4,
+                pointBackgroundColor: primaryColor,
+                pointBorderColor: '#fff',
+                pointHoverRadius: 6,
+                pointRadius: 4
+            }]
+        },
+        options: { ...chartOptions,
+            aspectRatio: 1.5
+        }
+    });
+    // Top Prompts Chart (Bar)
+    const topPromptsCtx = document.getElementById('topPromptsChart').getContext('2d');
+    new Chart(topPromptsCtx, {
+        type: 'bar',
+        data: {
+            labels: ['E-comm', 'Fantasy', 'React', 'Blog', 'Logo'],
+            datasets: [{
+                label: 'Sales',
+                data: [520, 450, 380, 210, 150],
+                backgroundColor: 'rgba(0, 163, 255, 0.5)',
+                borderColor: primaryColor,
+                borderWidth: 1,
+                borderRadius: 4
+            }]
+        },
+        options: { ...chartOptions,
+            aspectRatio: 1.5
+        }
+    });
+    // Category Distribution Chart (Doughnut)
+    const categoryDistributionCtx = document.getElementById('categoryDistributionChart').getContext('2d');
+    new Chart(categoryDistributionCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Marketing', 'Art', 'Code', 'Writing'],
+            datasets: [{
+                label: 'Prompts',
+                data: [300, 250, 180, 270],
+                backgroundColor: [
+                    'rgba(0, 163, 255, 0.8)',
+                    'rgba(0, 163, 255, 0.6)',
+                    'rgba(0, 163, 255, 0.4)',
+                    'rgba(0, 163, 255, 0.2)'
+                ],
+                borderColor: isDarkMode ? '#1A2233' : '#EFF2F5',
+                borderWidth: 4,
+                hoverOffset: 8
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: textColor,
+                        boxWidth: 12,
+                        padding: 20,
+                        font: {
+                            family: "'Space Grotesk', sans-serif"
+                        }
+                    }
+                }
+            },
+            cutout: '70%',
+            aspectRatio: 1
+        }
+    });
+    </script>
+
+</body></html>

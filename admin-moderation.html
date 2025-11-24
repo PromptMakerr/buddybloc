@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderation - BuddyBloc Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header"><a href="index.html" class="logo">
+                    <div class="logo-icon">B</div><span>BuddyBloc Admin</span>
+                </a></div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item"><span
+                        class="material-symbols-outlined">dashboard</span><span>Overview</span></a>
+                <a href="admin-users.html" class="nav-item"><span
+                        class="material-symbols-outlined">group</span><span>Users</span></a>
+                <a href="admin-content.html" class="nav-item"><span
+                        class="material-symbols-outlined">edit_note</span><span>Content</span></a>
+                <a href="admin-analytics.html" class="nav-item"><span
+                        class="material-symbols-outlined">analytics</span><span>Analytics</span></a>
+                <a href="admin-moderation.html" class="nav-item active"><span
+                        class="material-symbols-outlined">shield</span><span>Moderation</span></a>
+                <a href="admin-settings.html" class="nav-item"><span
+                        class="material-symbols-outlined">settings</span><span>Settings</span></a>
+                <a href="admin-team.html" class="nav-item"><span
+                        class="material-symbols-outlined">admin_panel_settings</span><span>Team</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1 style="font-size:var(--font-size-3xl)">Moderation & Safety</h1>
+                <div class="badge badge-warning" style="font-size:var(--font-size-base);padding:0.5rem 1rem">12 Pending
+                    Reports</div>
+            </header>
+
+            <div class="dashboard-body">
+                <div
+                    style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--spacing-lg);margin-bottom:var(--spacing-xl)">
+                    <div class="stat-card">
+                        <div class="stat-label">Pending Reports</div>
+                        <div class="stat-value">12</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Resolved Today</div>
+                        <div class="stat-value">8</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Banned Users</div>
+                        <div class="stat-value">23</div>
+                    </div>
+                </div>
+
+                <!-- Reports Queue -->
+                <div class="card" style="margin-bottom:var(--spacing-xl)">
+                    <div class="card-header">
+                        <h2 class="card-title">Reports Queue</h2>
+                        <select class="form-select" style="width:auto">
+                            <option>All Reports</option>
+                            <option>Harassment</option>
+                            <option>Spam</option>
+                            <option>Inappropriate Content</option>
+                        </select>
+                    </div>
+                    <div class="card-body">
+                        <!-- Report Item -->
+                        <div
+                            style="background:var(--color-surface-elevated);padding:var(--spacing-lg);border-radius:var(--radius-lg);border:1px solid var(--color-border);margin-bottom:var(--spacing-md)">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--spacing-md)">
+                                <div>
+                                    <div class="badge badge-warning" style="margin-bottom:var(--spacing-xs)">Harassment
+                                    </div>
+                                    <h4 style="margin-bottom:0.25rem">Report #1247</h4>
+                                    <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                        Reported 2 hours ago by Sarah Lane</p>
+                                </div>
+                                <div class="badge badge-primary">High Priority</div>
+                            </div>
+                            <p style="color:var(--color-text-secondary);margin-bottom:var(--spacing-md)">"User sent
+                                inappropriate messages during session"</p>
+                            <div style="display:flex;gap:var(--spacing-sm)">
+                                <button class="btn btn-outline">View Details</button>
+                                <button class="btn btn-secondary">Dismiss</button>
+                                <button class="btn" style="background:#FBBF24;color:white">Warn User</button>
+                                <button class="btn" style="background:#EF4444;color:white">Suspend</button>
+                            </div>
+                        </div>
+
+                        <div
+                            style="background:var(--color-surface-elevated);padding:var(--spacing-lg);border-radius:var(--radius-lg);border:1px solid var(--color-border)">
+                            <div
+                                style="display:flex;justify-content:space-between;align-items:start;margin-bottom:var(--spacing-md)">
+                                <div>
+                                    <div class="badge badge-warning" style="margin-bottom:var(--spacing-xs)">Spam</div>
+                                    <h4 style="margin-bottom:0.25rem">Report #1246</h4>
+                                    <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                        Reported 5 hours ago by Michael Wong</p>
+                                </div>
+                                <div class="badge badge-secondary">Medium Priority</div>
+                            </div>
+                            <p style="color:var(--color-text-secondary);margin-bottom:var(--spacing-md)">"User sending
+                                promotional messages"</p>
+                            <div style="display:flex;gap:var(--spacing-sm)">
+                                <button class="btn btn-outline">View Details</button>
+                                <button class="btn btn-secondary">Dismiss</button>
+                                <button class="btn" style="background:#FBBF24;color:white">Warn User</button>
+                                <button class="btn" style="background:#EF4444;color:white">Suspend</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banned Users -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Banned Users</h2>
+                    </div>
+                    <div class="card-body">
+                        <div
+                            style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md);background:var(--color-surface-elevated);border-radius:var(--radius-md);margin-bottom:var(--spacing-sm)">
+                            <div style="display:flex;align-items:center;gap:var(--spacing-md)">
+                                <div class="avatar avatar-md">JD</div>
+                                <div>
+                                    <h4 style="margin-bottom:0.125rem">John Doe</h4>
+                                    <p style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                        Banned for harassment</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline">Unban</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cookie Policy - BuddyBloc">
+    <title>Cookie Policy - BuddyBloc</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+</head>
+
+<body>
+    <div class="legal-page">
+        <header class="legal-header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">B</div>
+                    <span>BuddyBloc</span>
+                </a>
+            </div>
+        </header>
+
+        <main class="legal-content">
+            <div class="container" style="max-width: 800px;">
+                <h1>Cookie Policy</h1>
+                <p class="legal-updated">Laatst bijgewerkt: 24 november 2024</p>
+
+                <section class="legal-section">
+                    <h2>1. Wat zijn cookies?</h2>
+                    <p>Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen wanneer u onze website
+                        bezoekt. Ze helpen ons de website te laten functioneren en uw ervaring te verbeteren.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>2. Welke cookies gebruiken wij?</h2>
+
+                    <h3>2.1 Noodzakelijke cookies</h3>
+                    <p>Deze cookies zijn essentieel voor de werking van de website.</p>
+                    <table class="cookie-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie</th>
+                                <th>Doel</th>
+                                <th>Bewaartermijn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>auth_token</code></td>
+                                <td>Gebruikers authenticatie</td>
+                                <td>7 dagen</td>
+                            </tr>
+                            <tr>
+                                <td><code>session_id</code></td>
+                                <td>Sessie beheer</td>
+                                <td>Sessie</td>
+                            </tr>
+                            <tr>
+                                <td><code>csrf_token</code></td>
+                                <td>Beveiliging tegen CSRF aanvallen</td>
+                                <td>Sessie</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>2.2 Functionele cookies</h3>
+                    <p>Deze cookies onthouden uw voorkeuren.</p>
+                    <table class="cookie-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie</th>
+                                <th>Doel</th>
+                                <th>Bewaartermijn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>language</code></td>
+                                <td>Taalvoorkeur</td>
+                                <td>1 jaar</td>
+                            </tr>
+                            <tr>
+                                <td><code>theme</code></td>
+                                <td>Dark/light mode</td>
+                                <td>1 jaar</td>
+                            </tr>
+                            <tr>
+                                <td><code>matching_mode</code></td>
+                                <td>AI vs Manual matching voorkeur</td>
+                                <td>30 dagen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>2.3 Analytics cookies</h3>
+                    <p>Deze cookies helpen ons begrijpen hoe bezoekers onze website gebruiken.</p>
+                    <table class="cookie-table">
+                        <thead>
+                            <tr>
+                                <th>Cookie</th>
+                                <th>Doel</th>
+                                <th>Bewaartermijn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>_vercel_analytics</code></td>
+                                <td>Vercel Analytics tracking</td>
+                                <td>13 maanden</td>
+                            </tr>
+                            <tr>
+                                <td><code>page_views</code></td>
+                                <td>Pagina bezoeken tellen</td>
+                                <td>30 dagen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="legal-section">
+                    <h2>3. Cookies beheren</h2>
+
+                    <h3>3.1 Browser instellingen</h3>
+                    <p>U kunt cookies beheren via uw browser instellingen:</p>
+                    <ul>
+                        <li><strong>Chrome:</strong> Instellingen → Privacy en beveiliging → Cookies</li>
+                        <li><strong>Firefox:</strong> Opties → Privacy en beveiliging → Cookies</li>
+                        <li><strong>Safari:</strong> Voorkeuren → Privacy → Cookies</li>
+                        <li><strong>Edge:</strong> Instellingen → Cookies en sitegegevens</li>
+                    </ul>
+
+                    <h3>3.2 Cookie voorkeuren</h3>
+                    <p>U kunt uw cookie voorkeuren hieronder aanpassen:</p>
+
+                    <div class="cookie-preferences">
+                        <div class="cookie-toggle">
+                            <label>
+                                <input type="checkbox" checked disabled>
+                                <span><strong>Noodzakelijke cookies</strong> (altijd aan)</span>
+                            </label>
+                            <p class="cookie-description">Vereist voor basisfunctionaliteit</p>
+                        </div>
+
+                        <div class="cookie-toggle">
+                            <label>
+                                <input type="checkbox" id="functional-cookies" checked>
+                                <span><strong>Functionele cookies</strong></span>
+                            </label>
+                            <p class="cookie-description">Onthoud uw voorkeuren</p>
+                        </div>
+
+                        <div class="cookie-toggle">
+                            <label>
+                                <input type="checkbox" id="analytics-cookies" checked>
+                                <span><strong>Analytics cookies</strong></span>
+                            </label>
+                            <p class="cookie-description">Help ons de site te verbeteren</p>
+                        </div>
+
+                        <button class="btn btn-primary" onclick="saveCookiePreferences()">Voorkeuren opslaan</button>
+                    </div>
+                </section>
+
+                <section class="legal-section">
+                    <h2>4. Third-party cookies</h2>
+                    <p>Wij gebruiken diensten van derden die cookies kunnen plaatsen:</p>
+                    <ul>
+                        <li><strong>Vercel Analytics:</strong> Website statistieken (privacy-friendly, geen tracking)
+                        </li>
+                        <li><strong>Supabase:</strong> Database en authenticatie</li>
+                    </ul>
+                    <p>Deze partijen hebben hun eigen privacybeleid.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>5. Updates</h2>
+                    <p>Wij kunnen dit cookiebeleid bijwerken. Controleer deze pagina regelmatig voor wijzigingen.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>6. Contact</h2>
+                    <p>Vragen over cookies? Neem contact op via <a
+                            href="mailto:privacy@buddybloc.com">privacy@buddybloc.com</a></p>
+                </section>
+
+                <div class="legal-footer">
+                    <a href="index.html" class="btn btn-outline">Terug naar Home</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function saveCookiePreferences() {
+            const functional = document.getElementById('functional-cookies').checked;
+            const analytics = document.getElementById('analytics-cookies').checked;
+
+            localStorage.setItem('cookie_functional', functional);
+            localStorage.setItem('cookie_analytics', analytics);
+
+            if (window.showNotification) {
+                showNotification('Cookie voorkeuren opgeslagen', 'success');
+            } else {
+                alert('Cookie voorkeuren opgeslagen!');
+            }
+        }
+
+        // Load saved preferences
+        window.addEventListener('DOMContentLoaded', () => {
+            const functional = localStorage.getItem('cookie_functional');
+            const analytics = localStorage.getItem('cookie_analytics');
+
+            if (functional !== null) {
+                document.getElementById('functional-cookies').checked = functional === 'true';
+            }
+            if (analytics !== null) {
+                document.getElementById('analytics-cookies').checked = analytics === 'true';
+            }
+        });
+    </script>
+
+    <style>
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-md) 0;
+        }
+
+        .cookie-table th,
+        .cookie-table td {
+            padding: var(--spacing-sm);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .cookie-table th {
+            background: var(--color-surface-elevated);
+            font-weight: 600;
+        }
+
+        .cookie-table code {
+            background: var(--color-surface-elevated);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .cookie-preferences {
+            background: var(--color-surface-elevated);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .cookie-toggle {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cookie-toggle label {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            cursor: pointer;
+        }
+
+        .cookie-description {
+            margin: var(--spacing-xs) 0 0 var(--spacing-xl);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+        }
+    </style>
+</body>
+
+</html>

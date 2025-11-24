@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+        }
+        .striped-background {
+            background-image: linear-gradient(135deg, rgba(230, 230, 240, 0.4) 25%, transparent 25%),
+                              linear-gradient(225deg, rgba(230, 230, 240, 0.4) 25%, transparent 25%),
+                              linear-gradient(45deg, rgba(230, 230, 240, 0.4) 25%, transparent 25%),
+                              linear-gradient(315deg, rgba(230, 230, 240, 0.4) 25%, #ffffff 25%);
+            background-size: 10px 10px;
+        }
+        .dark .striped-background {
+             background-image: linear-gradient(135deg, rgba(40, 50, 70, 0.4) 25%, transparent 25%),
+                              linear-gradient(225deg, rgba(40, 50, 70, 0.4) 25%, transparent 25%),
+                              linear-gradient(45deg, rgba(40, 50, 70, 0.4) 25%, transparent 25%),
+                              linear-gradient(315deg, rgba(40, 50, 70, 0.4) 25%, #1f2937 25%);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#427cf0",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 p-4 backdrop-blur-sm">
+<button class="text-slate-800 dark:text-slate-200 flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-slate-900 dark:text-slate-50 text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-10">Checkout</h1>
+</header>
+<main class="flex-1 px-4 pb-28 pt-4">
+<!-- Prompt Details Card -->
+<section class="rounded-lg bg-white dark:bg-gray-800 shadow-sm p-6 mb-6 striped-background">
+<h2 class="text-slate-900 dark:text-slate-50 tracking-tight text-2xl font-bold leading-tight">Cinematic Sci-Fi World Generator</h2>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal pt-2">A detailed prompt for creating futuristic cityscapes with advanced architecture and atmospheric lighting.</p>
+<div class="text-primary tracking-tight text-3xl font-bold leading-tight pt-4">$1.99</div>
+</section>
+<!-- Payment Method Section -->
+<section class="mb-6">
+<h3 class="text-slate-800 dark:text-slate-200 text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Payment Method</h3>
+<div class="flex items-center justify-between rounded-lg bg-white dark:bg-gray-800 p-4 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700">
+<svg class="h-6 w-6 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div>
+<p class="font-semibold text-slate-800 dark:text-slate-200">Visa ending in 1234</p>
+<p class="text-sm text-slate-500 dark:text-slate-400">Expires 12/26</p>
+</div>
+</div>
+<a class="text-sm font-semibold text-primary hover:text-primary/80" href="#">Change</a>
+</div>
+</section>
+<!-- Order Summary Panel -->
+<section class="mb-8">
+<h3 class="text-slate-800 dark:text-slate-200 text-lg font-bold leading-tight tracking-[-0.015em] pb-3">Order Summary</h3>
+<div class="space-y-3 rounded-lg bg-white dark:bg-gray-800 p-4 shadow-sm">
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Subtotal</span>
+<span>$1.99</span>
+</div>
+<div class="flex justify-between text-slate-600 dark:text-slate-400">
+<span>Taxes</span>
+<span>$0.12</span>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-700 my-3"></div>
+<div class="flex justify-between text-lg font-bold text-slate-900 dark:text-slate-50">
+<span>Total</span>
+<span>$2.11</span>
+</div>
+</div>
+</section>
+<div class="flex items-center justify-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined text-base">lock</span>
+<span>Secure SSL Checkout</span>
+</div>
+</main>
+<!-- Bottom CTA Bar -->
+<footer class="fixed bottom-0 left-0 right-0 z-10 bg-background-light/80 dark:bg-background-dark/80 p-4 backdrop-blur-sm border-t border-slate-200 dark:border-slate-800">
+<button class="w-full rounded-full bg-primary text-white py-4 text-lg font-bold leading-tight shadow-lg shadow-primary/30 transition-all hover:shadow-xl hover:shadow-primary/40 active:scale-[0.98]">
+                Complete Purchase
+            </button>
+</footer>
+</div>
+</body></html>

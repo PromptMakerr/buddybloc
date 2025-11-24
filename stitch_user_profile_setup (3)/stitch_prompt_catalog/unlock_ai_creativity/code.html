@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prompterion AI Assistant Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .bg-stripes {
+            background-image: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 10px,
+                rgba(137, 207, 240, 0.05) 10px,
+                rgba(137, 207, 240, 0.05) 20px
+            );
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#427cf0",
+                        "background-light": "#F5F7FA",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden bg-stripes">
+<main class="flex-1 px-4 py-8">
+<!-- Page Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-3 py-5">
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<div class="h-2 w-2 rounded-full bg-primary"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+<div class="h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-700"></div>
+</div>
+<!-- Headline Text -->
+<h1 class="text-[#0d121b] dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center pb-3 pt-6">Meet Your AI Assistant</h1>
+<!-- Header Image / Hero Graphic -->
+<div class="relative mt-6 @container">
+<div class="w-full h-64 bg-center bg-no-repeat bg-contain flex flex-col justify-end overflow-hidden" data-alt="Stylized illustration of an abstract AI orb interacting with user interface elements" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBV9DgUVCnrQLRjon4jnSC82efI4qtCKN5dudfwQsJq3ub1DzD2w24gadnXsVrX1exgdXuPqx89dSzL4CGghkdEQGlXGoxIXcZA2MyafOOdpoM_xzguaX8Z8k8uVsRzJYJJXgMUPkrg8PY7vU6qcfKtfP8T3z-ePywj1bmjjRAkRNErjsfm4nMiq5jsNw7zQU2sKOw9x13GLJDlFfJzOSXazo8eVacGL6UkSuXhUoDisWf2FZUZSlMg40kqCh9z8dSvXSK9uU-hys6k");'></div>
+</div>
+<div class="mt-8 flex flex-col gap-6">
+<!-- Card 1: Prompt Templates -->
+<div class="relative flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/50 dark:border-slate-700/50 overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white/50 to-transparent dark:from-white/10"></div>
+<div class="flex items-center gap-4 p-5">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-[#89CFF0]/20 text-[#2563eb]">
+<span class="material-symbols-outlined text-3xl" data-icon="auto_awesome_mosaic">auto_awesome_mosaic</span>
+</div>
+<div class="flex-1">
+<p class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Perfect Prompts, Instantly</p>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal mt-1">Our AI provides ready-to-use, optimized templates for any task.</p>
+</div>
+</div>
+</div>
+<!-- Card 2: Workflow Automation -->
+<div class="relative flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-white/50 dark:border-slate-700/50 overflow-hidden">
+<div class="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-white/50 to-transparent dark:from-white/10"></div>
+<div class="flex items-center gap-4 p-5">
+<div class="flex h-12 w-12 items-center justify-center rounded-lg bg-[#89CFF0]/20 text-[#2563eb]">
+<span class="material-symbols-outlined text-3xl" data-icon="account_tree">account_tree</span>
+</div>
+<div class="flex-1">
+<p class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Automate Your Workflow</p>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal mt-1">Chain prompts together and automate repetitive tasks with your intelligent assistant.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- CTA Section -->
+<footer class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm py-6 px-4 border-t border-slate-200/80 dark:border-slate-800/80">
+<div class="flex flex-col items-center gap-4">
+<button class="relative w-full h-12 px-6 font-semibold text-white bg-[#89CFF0] rounded-full shadow-lg shadow-[#89CFF0]/30 transition-transform duration-200 ease-in-out hover:scale-105 active:scale-95 overflow-hidden">
+<span class="absolute inset-x-0 top-0 h-6 bg-gradient-to-b from-white/40 to-transparent"></span>
+                    Try AI Assistant
+                </button>
+<a class="text-slate-500 dark:text-slate-400 font-medium text-sm hover:text-primary dark:hover:text-primary" href="#">Skip for now</a>
+</div>
+</footer>
+</div>
+</body></html>

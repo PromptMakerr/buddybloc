@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Assistant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .diagonal-stripes {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(0, 0, 0, 0.02) 10px, rgba(0, 0, 0, 0.02) 20px);
+        }
+        .glossy-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        .glossy-effect::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+            border-radius: inherit;
+        }
+        .message-content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2b6cee",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "light-gray": "#F5F7FA",
+              "accent-blue": "#4A90E2",
+              "dark-gray-text": "#333333",
+              "medium-gray-text": "#888888",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {
+                "DEFAULT": "0.5rem", 
+                "lg": "0.75rem",
+                "xl": "1rem",
+                "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen w-full flex-col bg-light-gray group/design-root overflow-hidden diagonal-stripes">
+<!-- Header Bar -->
+<header class="flex items-center bg-light-gray/80 backdrop-blur-sm p-4 pb-2 justify-between shrink-0 border-b border-gray-200">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-dark-gray-text text-2xl">menu</span>
+</div>
+<h1 class="text-dark-gray-text text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">AI Assistant</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 w-10 bg-transparent text-dark-gray-text transition-colors hover:bg-accent-blue/10">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</button>
+</div>
+</header>
+<!-- Conversation/Display Area -->
+<main class="flex-1 overflow-y-auto p-4 space-y-6">
+<!-- AI Welcome Message -->
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0 border border-gray-200" data-alt="AI assistant avatar with a blue circuit pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUSBZgr43rLHws3dxSX0G5Cm4RFXWPwCZG7zQS0lj3PWkpbfcEm0rNopO0d58ZF5Bw0CxDYn_zfOK-tKAIR8CpZSAR29ojOZXjHjq24KbHKqyvK15YvoCYi_oDBY__9PvwEqTPnJcW2gtEYwfjYinM7jQ1zcy-PTEVTS-utbelCCVR83aYN1iGJ_VxhhLIRqqya8Tx0gzfeVUe4zmzXbl0ePYbupr-6I8jbmpplgaxuGMFimLsDyVxJeRzB1QwKfpO_uc3RL6SurKF");'></div>
+<div class="flex flex-1 flex-col gap-2 items-start">
+<p class="text-medium-gray-text text-[13px] font-normal leading-normal max-w-[360px]">AI Assistant</p>
+<div class="relative max-w-xs">
+<div class="bg-white text-dark-gray-text text-base font-normal leading-relaxed flex rounded-xl px-4 py-3 shadow-sm glossy-effect">
+<p class="message-content">Hello! How can I help you today? You can ask me to suggest a prompt for a marketing campaign or help outline a blog post.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- User Query Bubble -->
+<div class="flex items-end gap-3 justify-end">
+<div class="flex flex-1 flex-col gap-2 items-end">
+<p class="text-medium-gray-text text-[13px] font-normal leading-normal max-w-[360px] text-right">You</p>
+<div class="relative max-w-xs">
+<div class="bg-accent-blue text-white text-base font-normal leading-relaxed flex rounded-xl px-4 py-3 shadow-md glossy-effect">
+<p class="message-content">Help me outline a blog post about the benefits of AI.</p>
+</div>
+</div>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0 border border-gray-200" data-alt="User avatar with a simple abstract pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBx_XH1yC2cMCn1tP3C0g3fI_LJq9gxcS4YRLPfna-tGI7OiQmD-F3y91sSzjHAT0HBceD59sp5iN6g118YuraCjbTLS8qarA2ijS_3hDn96zwfEIssfZdDpj9dHhFnzofUedbiGM5oR5XKFFDRkuOQ3KPE1J9-pSXpmg4U5E3o7mSkbB63qp1NpdOuDsDbXm4JP6ujP729hqF4BG4VrSo8JcQUJniJ31ti0SIxXbVBi3lH6tygbwpIKoEaVd_JwaczJHTi07I33dUK");'></div>
+</div>
+<!-- AI Thinking Indicator -->
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0 border border-gray-200" data-alt="AI assistant avatar with a blue circuit pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXTnF4nN0qoI-_H37p2kUICTJa6aCM1DHw2jKoSjYdwC7j1OFDslAhZ2026p6fSvNDgf9i4-GLXrzIhU_x9IVg8ytw3qp7s-Vj8eCPHJvBldsZ7nMXQWPbjo3tarUEkLDRH4HjZWNggNtFbWDi_xDtzkf7K4c2Us6KBjPXKudy4AoPPC9SyMbztxZgHBtSvlJfPuQc5Fnnl3CpaPRRZb7m9taKNlAjOtxwf4hVUGYUVSp_hg266esILQWLOLPzaX_RKuURpTpTC6Pe");'></div>
+<div class="flex flex-1 flex-col gap-2 items-start">
+<div class="relative max-w-xs">
+<div class="bg-white text-dark-gray-text flex items-center rounded-xl px-4 py-3 shadow-sm glossy-effect">
+<div class="flex space-x-1.5 message-content">
+<div class="w-2 h-2 bg-medium-gray-text rounded-full animate-bounce" style="animation-delay: -0.3s;"></div>
+<div class="w-2 h-2 bg-medium-gray-text rounded-full animate-bounce" style="animation-delay: -0.15s;"></div>
+<div class="w-2 h-2 bg-medium-gray-text rounded-full animate-bounce"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Response Card -->
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-10 h-10 shrink-0 border border-gray-200" data-alt="AI assistant avatar with a blue circuit pattern" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_Pqr2qTZOpw8MfA-mHwdRuICZlwNCgHTwdKba7sccIbNr80Fot2gmWyQgGezqDLeRyRJlBQWuWybAl4B9iVcv4eBOKQ426zg3FoxaV0dBn4mmd4qYH5Gfpq7z8WewAYRDh_qDUawFecaOMmp2P2Q2WIfOBwrcQu0TvDON7njPdiucrO1RU8RfaqofrQ9H6Sazuaj3yF9Tc0RHAygzI2sc3R_F4VhC5nnntD88uWZQ69F5hQ2rtyxibkzW9Lgf8vS0kl5nzl7YgZxX");'></div>
+<div class="flex flex-1 flex-col gap-2 items-start">
+<p class="text-medium-gray-text text-[13px] font-normal leading-normal max-w-[360px]">AI Assistant</p>
+<div class="relative max-w-xs">
+<div class="bg-white text-dark-gray-text text-base font-normal leading-relaxed flex rounded-xl px-4 py-3 shadow-sm glossy-effect">
+<p class="message-content">Of course! Here is an outline for your blog post:</p>
+</div>
+</div>
+<div class="relative max-w-xs w-full bg-white rounded-xl shadow-sm glossy-effect overflow-hidden">
+<div class="p-4 message-content">
+<p class="text-dark-gray-text text-base font-bold leading-normal mb-2">Blog Post Outline: The Top 5 Benefits of AI</p>
+<ul class="space-y-1 text-dark-gray-text/90 text-sm list-disc list-inside">
+<li>Introduction: What is AI?</li>
+<li>Benefit 1: Increased Efficiency</li>
+<li>Benefit 2: Data-Driven Insights</li>
+<li>Benefit 3: Enhanced Personalization</li>
+<li>Benefit 4: Innovation &amp; Discovery</li>
+<li>Conclusion: The Future with AI</li>
+</ul>
+</div>
+</div>
+<!-- Secondary Action Buttons -->
+<div class="flex gap-2 pt-1">
+<button class="flex items-center justify-center rounded-full h-9 px-4 bg-white text-dark-gray-text text-sm font-bold shadow-sm transition-transform hover:scale-105 hover:shadow-md glossy-effect">
+<span class="message-content">Refine</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-9 px-4 bg-white text-dark-gray-text text-sm font-bold shadow-sm transition-transform hover:scale-105 hover:shadow-md glossy-effect">
+<span class="message-content">Copy</span>
+</button>
+<button class="flex items-center justify-center rounded-full h-9 px-4 bg-white text-dark-gray-text text-sm font-bold shadow-sm transition-transform hover:scale-105 hover:shadow-md glossy-effect">
+<span class="message-content">Use Template</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Input Area -->
+<footer class="bg-light-gray/80 backdrop-blur-sm p-4 pt-3 border-t border-gray-200 shrink-0">
+<div class="flex items-center gap-3">
+<input class="flex-1 h-12 px-4 bg-white border border-gray-200 rounded-full text-dark-gray-text placeholder-medium-gray-text focus:ring-2 focus:ring-accent-blue focus:border-transparent transition-shadow shadow-sm" placeholder="Ask for a workflow or prompt..." type="text"/>
+<button class="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-accent-blue text-white rounded-full shadow-lg transition-transform hover:scale-105 hover:shadow-xl glossy-effect">
+<span class="material-symbols-outlined text-2xl message-content">auto_awesome</span>
+</button>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SEO Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      .glossy-button {
+          background-image: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 60%, rgba(255,255,255,0.5) 100%);
+      }
+      .subtle-stripes {
+          background-image: repeating-linear-gradient(
+            45deg,
+            rgba(0, 0, 0, 0.01),
+            rgba(0, 0, 0, 0.01) 10px,
+            rgba(0, 0, 0, 0) 10px,
+            rgba(0, 0, 0, 0) 20px
+          );
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#4A90E2",
+              "background-light": "#F5F7FA",
+              "background-dark": "#101622",
+              "card-light": "#FFFFFF",
+              "card-dark": "#1a2233",
+              "text-light-body": "#333333",
+              "text-dark-body": "#E0E0E0",
+              "text-light-headline": "#000000",
+              "text-dark-headline": "#FFFFFF",
+              "border-light": "#E0E6F1",
+              "border-dark": "#303a50",
+            },
+            fontFamily: {
+              "display": ["Public Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+            boxShadow: {
+                'primary': '0 4px 14px 0 rgba(74, 144, 226, 0.39)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light-body dark:text-dark-body subtle-stripes">
+<div class="relative flex min-h-screen w-full flex-col">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 pb-2 justify-between border-b border-border-light dark:border-border-dark">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-text-light-headline dark:text-dark-headline">menu</span>
+</div>
+<h1 class="text-text-light-headline dark:text-dark-headline text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">SEO Management</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-text-light-headline dark:text-dark-headline text-base font-bold leading-normal">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="sticky top-[70px] z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex border-b border-border-light dark:border-border-dark justify-between overflow-x-auto">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4 flex-1 min-w-[100px]" href="#">
+<p class="text-sm font-bold leading-normal">Keywords</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-light-body dark:text-dark-body pb-[13px] pt-4 flex-1 min-w-[100px]" href="#">
+<p class="text-sm font-bold leading-normal">Meta Content</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-light-body dark:text-dark-body pb-[13px] pt-4 flex-1 min-w-[100px]" href="#">
+<p class="text-sm font-bold leading-normal">Sitemaps</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-text-light-body dark:text-dark-body pb-[13px] pt-4 flex-1 min-w-[100px]" href="#">
+<p class="text-sm font-bold leading-normal">Analytics</p>
+</a>
+</div>
+</div>
+<!-- Main Content -->
+<main class="p-4 space-y-6 flex-grow">
+<!-- Global Keywords Card -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm overflow-hidden">
+<div class="p-4">
+<h2 class="text-text-light-headline dark:text-dark-headline text-lg font-bold leading-tight">Global Keywords</h2>
+<p class="text-sm text-text-light-body dark:text-dark-body pt-1">Manage the main keywords for the platform.</p>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<div class="flex gap-2 flex-wrap">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 pl-3 pr-3">
+<p class="text-primary text-sm font-medium">AI Prompts</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 pl-3 pr-3">
+<p class="text-primary text-sm font-medium">Elemental AI</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 pl-3 pr-3">
+<p class="text-primary text-sm font-medium">Creative Writing</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 pl-3 pr-3">
+<p class="text-primary text-sm font-medium">SEO Tools</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-primary/10 pl-3 pr-3">
+<p class="text-primary text-sm font-medium">Content Generation</p>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<label class="text-sm font-medium text-text-light-headline dark:text-dark-headline" for="new-keyword">Add New Keyword</label>
+<input class="mt-2 w-full rounded border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary focus:ring-opacity-50 text-text-light-body dark:text-dark-body" id="new-keyword" placeholder="e.g., AI Art" type="text"/>
+<button class="w-full mt-4 flex items-center justify-center rounded-lg h-12 bg-primary text-white text-base font-bold leading-normal shadow-primary glossy-button transition-transform active:scale-95">Update Keywords</button>
+</div>
+</div>
+<!-- Meta Content Card -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm overflow-hidden">
+<div class="p-4">
+<h2 class="text-text-light-headline dark:text-dark-headline text-lg font-bold leading-tight">Meta Content</h2>
+<p class="text-sm text-text-light-body dark:text-dark-body pt-1">Edit meta tags for "Futuristic Cities" prompt.</p>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark space-y-4">
+<div>
+<label class="text-sm font-medium text-text-light-headline dark:text-dark-headline" for="meta-title">Meta Title</label>
+<input class="mt-2 w-full rounded border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary focus:ring-opacity-50 text-text-light-body dark:text-dark-body" id="meta-title" type="text" value="Futuristic Cities | Elemental AI Prompts"/>
+</div>
+<div>
+<div class="flex justify-between">
+<label class="text-sm font-medium text-text-light-headline dark:text-dark-headline" for="meta-description">Meta Description</label>
+<span class="text-sm text-text-light-body dark:text-dark-body">145 / 160</span>
+</div>
+<textarea class="mt-2 w-full rounded border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark focus:border-primary focus:ring-primary focus:ring-opacity-50 text-text-light-body dark:text-dark-body" id="meta-description" rows="4">Generate stunning AI art of futuristic cities. Explore cyberpunk landscapes, utopian skylines, and advanced architectural concepts with our AI prompts.</textarea>
+</div>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<h3 class="text-sm font-medium text-text-light-headline dark:text-dark-headline mb-2">Search Snippet Preview</h3>
+<div class="p-3 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark">
+<p class="text-sm text-text-light-body dark:text-dark-body truncate">https://elementalai.com/prompts/futuristic-cities</p>
+<h4 class="text-lg font-normal text-blue-700 dark:text-blue-400 truncate">Futuristic Cities | Elemental AI Prompts</h4>
+<p class="text-sm text-text-light-body dark:text-dark-body">Generate stunning AI art of futuristic cities. Explore cyberpunk landscapes, utopian skylines, and advanced architectural concepts with our AI prompts.</p>
+</div>
+</div>
+<div class="p-4">
+<button class="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-white text-base font-bold leading-normal shadow-primary glossy-button transition-transform active:scale-95">Save Changes</button>
+</div>
+</div>
+<!-- Sitemaps Card -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm overflow-hidden">
+<div class="p-4">
+<h2 class="text-text-light-headline dark:text-dark-headline text-lg font-bold leading-tight">Sitemaps</h2>
+<p class="text-sm text-text-light-body dark:text-dark-body pt-1">Manage and generate sitemaps for search engines.</p>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<div class="flex items-center justify-between">
+<p class="text-text-light-body dark:text-dark-body">Last generated:</p>
+<p class="font-medium text-text-light-headline dark:text-dark-headline">Oct 26, 2023, 10:30 AM</p>
+</div>
+<div class="flex items-center justify-between mt-4">
+<p class="text-text-light-body dark:text-dark-body">Automatic updates:</p>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" role="switch">
+<span class="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+<div class="p-4">
+<button class="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-white text-base font-bold leading-normal shadow-primary glossy-button transition-transform active:scale-95">Generate New Sitemap</button>
+</div>
+</div>
+<!-- Analytics Card -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-border-light dark:border-border-dark shadow-sm overflow-hidden">
+<div class="p-4">
+<h2 class="text-text-light-headline dark:text-dark-headline text-lg font-bold leading-tight">Analytics</h2>
+<p class="text-sm text-text-light-body dark:text-dark-body pt-1">Key SEO performance metrics.</p>
+</div>
+<div class="grid grid-cols-2 gap-4 p-4 border-t border-border-light dark:border-border-dark">
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-lg border border-border-light dark:border-border-dark">
+<p class="text-sm text-text-light-body dark:text-dark-body">Organic Visitors</p>
+<p class="text-xl font-bold text-text-light-headline dark:text-dark-headline mt-1">12,453</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark p-3 rounded-lg border border-border-light dark:border-border-dark">
+<p class="text-sm text-text-light-body dark:text-dark-body">Top Keyword</p>
+<p class="text-xl font-bold text-text-light-headline dark:text-dark-headline mt-1 truncate">AI Art Prompts</p>
+</div>
+</div>
+<div class="p-4 border-t border-border-light dark:border-border-dark">
+<h3 class="text-sm font-medium text-text-light-headline dark:text-dark-headline mb-3">Organic Traffic (Last 30 Days)</h3>
+<div class="h-48 w-full">
+<img class="h-full w-full object-cover rounded-lg" data-alt="A clean line graph showing an upward trend of organic traffic over the last 30 days, with a light blue line on a white background with a faint grid." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCLUbAVeMvGhNseMuMxyMp1FM4K_0-4LzqwDqL6JQkV-PlwMM6H_ExFiCiUGhc_rBgLfXPIQ9_W1AcYjMXdbcmFH5U478g9va8Ll7uayP3tx-IY5rNIGj-7DDKTKv7DG_EcwSc6DsyFg31KUQXUAGfr-cOcCphR5elOMbiAwJgVO9_8D1mc-rIAUH6H7fXOArJphFLySCh28sNxFMdOmnt5b1qqPgdD1TIuQoJQRILpKWdcrQX8v4YJSA1_F96X3Efy6lKUjaWkgW3"/>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

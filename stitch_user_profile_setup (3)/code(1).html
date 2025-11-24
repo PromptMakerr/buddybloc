@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BuddyBloc - Find Your Buddy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3b82f6", // Updated to a modern blue
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0d1117", // Deeper dark blue
+                        "card-dark": "#161b22", // Card background
+                        "border-dark": "#30363d", // Border color
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-dark text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-border-dark bg-background-dark/80 backdrop-blur-sm px-4 md:px-6 lg:px-8">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">BuddyBloc</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-card-dark text-gray-300 hover:bg-border-dark">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar of a person smiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtMI-dqldpOy6GZRfKe-sxQRMDVkV01m6i5N7_RJiGKXeMkNraDJAkXD2L44dmFvmTYi5FWVqTBHtHgfQYFT823osnyJkEIfXAJcikHD4nR2D6kUPXvzn_dhBE61UmU1LD_Egn_rold3mayEjjHnAfoeRqTMkRWYy5pmyakYrIMeSHKQZ4RoFKhfKOsRshlVz5pN4L_LFzHWb6_EdPHVpK_MC7ZmwViXERlz4S0RGGxYcfKEqJxDQrmhnMaI3asxhZ3HcQUP2sMgiV");'></div>
+</div>
+</header>
+<div class="flex flex-1">
+<aside class="sticky top-16 h-[calc(100vh-4rem)] w-80 flex-shrink-0 border-r border-border-dark bg-background-dark p-6">
+<div class="flex h-full flex-col justify-between">
+<div class="flex flex-col gap-6">
+<h1 class="text-xl font-bold text-white">Find Your Buddy</h1>
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-400 flex border-none bg-card-dark items-center justify-center pl-3 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-gray-200 focus:outline-0 focus:ring-0 border-none bg-card-dark focus:border-none h-full placeholder:text-gray-400 pl-2 text-sm font-normal" placeholder="Search by name or keyword" value=""/>
+</div>
+</label>
+<div class="flex flex-col">
+<details class="flex flex-col border-t border-border-dark py-2 group" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+<p class="text-sm font-medium text-gray-100">Industry</p>
+<span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="flex flex-col gap-2 pt-2">
+<label class="flex items-center gap-2"><input checked="" class="form-checkbox rounded border-gray-600 bg-gray-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-gray-300">Technology</span></label>
+<label class="flex items-center gap-2"><input class="form-checkbox rounded border-gray-600 bg-gray-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-gray-300">Healthcare</span></label>
+<label class="flex items-center gap-2"><input class="form-checkbox rounded border-gray-600 bg-gray-700 text-primary focus:ring-primary/50" type="checkbox"/><span class="text-sm text-gray-300">Finance</span></label>
+</div>
+</details>
+<details class="flex flex-col border-t border-border-dark py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+<p class="text-sm font-medium text-gray-100">Skills</p>
+<span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+</details>
+<details class="flex flex-col border-t border-border-dark py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+<p class="text-sm font-medium text-gray-100">Time Zone</p>
+<span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+</details>
+<details class="flex flex-col border-t border-t-border-dark py-2 group">
+<summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+<p class="text-sm font-medium text-gray-100">Availability</p>
+<span class="material-symbols-outlined text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+</details>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">group</span>
+<p class="text-sm font-medium">My Buddies</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-card-dark" href="#">
+<span class="material-symbols-outlined text-2xl text-gray-300">chat_bubble</span>
+<p class="text-sm font-medium text-gray-300">Messages</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-card-dark" href="#">
+<span class="material-symbols-outlined text-2xl text-gray-300">account_circle</span>
+<p class="text-sm font-medium text-gray-300">Profile</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 bg-background-dark p-8">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-2xl font-bold text-white">Recommended Buddies For You</h2>
+<label class="flex flex-col min-w-40">
+<select class="form-select w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-200 focus:outline-0 focus:ring-1 focus:ring-primary border border-border-dark bg-card-dark focus:border-primary h-11 px-3 text-sm font-medium">
+<option>Sort by: Best Match</option>
+<option>Sort by: Recently Active</option>
+<option>Sort by: Newest Members</option>
+</select>
+</label>
+</div>
+<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="group relative flex flex-col rounded-xl border border-border-dark bg-card-dark p-6 transition-shadow hover:shadow-lg hover:shadow-primary/20">
+<div class="flex flex-grow flex-col items-center text-center">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24" data-alt="Profile picture of Sarah Johnson" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBZaQI9X_kcCR63CumKVHu1CFLIgTWWfXAr6EGcQOV4kufGxPYUmm-J-qryAFbcqE8jeMensqpH-NkoaLpmjuMjNrbTlm1_ADK6AMWBrSNph7PiTNwN8x2jezlVSmdICEwFte4ksUVl1hkreDgwOICU8xUZmjLuXDbUnJZoYbYvg4wchWdJqjOKPJen5mTeDUbBnTwaXEh-1XtgRDZCwQtOeQZyJpLcEFpqQielkw_hDGtlhb6UIZlgIUJHU-lHyEwi9H7e7JvyEZI");'></div>
+<div class="absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full border-2 border-card-dark bg-primary/20 text-primary">
+<span class="text-xs font-bold">95%</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white">Sarah Johnson</h3>
+<p class="text-sm text-gray-400">UX Designer at TechCorp</p>
+<div class="mt-3 flex flex-wrap justify-center gap-2">
+<span class="rounded-full bg-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary">GMT-5</span>
+<span class="rounded-full bg-gray-700 px-2.5 py-0.5 text-xs font-medium text-gray-300">Design</span>
+</div>
+<p class="mt-4 text-sm text-gray-300 h-10">Seeking an accountability partner for a side project.</p>
+</div>
+<div class="mt-6 flex flex-col gap-2">
+<button class="flex w-full items-center justify-center rounded-lg bg-primary h-10 px-4 text-sm font-bold text-white hover:bg-primary/90 transition-colors">Connect</button>
+<button class="flex w-full items-center justify-center rounded-lg bg-border-dark h-10 px-4 text-sm font-bold text-gray-200 hover:bg-gray-700 transition-colors">View Profile</button>
+</div>
+</div>
+<div class="group relative flex flex-col rounded-xl border border-border-dark bg-card-dark p-6 transition-shadow hover:shadow-lg hover:shadow-primary/20">
+<div class="flex flex-grow flex-col items-center text-center">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24" data-alt="Profile picture of Michael Chen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCjF5c0wOUjUVmFDZ63ogVhdlhpd1oHBrl7WX6YH-VBABG17sDxq8kLZn7r2near4WKdlkX0-U5MYJ4ZrgafT3bj-HIeaABrygPrXIN7kbvlHnIg9jBdWn6LPYzTbJeFnRmavDz45yaQK9yVG8eCgeXyVHKvsGruTuaSWnIgWL2W0ESXy5kkkuBPh6J-i7OXCMzVv9n7wibyaB5OdUEucJ-M-dyaEziiwwXIV11Y2vzNMd7FrvPfHE590llql4YvM-43-nKxpgLS4QL");'></div>
+<div class="absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full border-2 border-card-dark bg-primary/20 text-primary">
+<span class="text-xs font-bold">92%</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white">Michael Chen</h3>
+<p class="text-sm text-gray-400">Data Scientist at DataLeap</p>
+<div class="mt-3 flex flex-wrap justify-center gap-2">
+<span class="rounded-full bg-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary">GMT+1</span>
+<span class="rounded-full bg-gray-700 px-2.5 py-0.5 text-xs font-medium text-gray-300">AI/ML</span>
+</div>
+<p class="mt-4 text-sm text-gray-300 h-10">Morning person looking for focused work sessions.</p>
+</div>
+<div class="mt-6 flex flex-col gap-2">
+<button class="flex w-full items-center justify-center rounded-lg bg-primary h-10 px-4 text-sm font-bold text-white hover:bg-primary/90 transition-colors">Connect</button>
+<button class="flex w-full items-center justify-center rounded-lg bg-border-dark h-10 px-4 text-sm font-bold text-gray-200 hover:bg-gray-700 transition-colors">View Profile</button>
+</div>
+</div>
+<div class="group relative flex flex-col rounded-xl border border-border-dark bg-card-dark p-6 transition-shadow hover:shadow-lg hover:shadow-primary/20">
+<div class="flex flex-grow flex-col items-center text-center">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24" data-alt="Profile picture of Emily Rodriguez" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALfbPf4PTFZPfY694o1ENkfa5c7uGJSMYN3qNqbTHtyDdjGlRj1nopjQMH5UtaYBVi4iCW1LRvVjYlNS_VQccU024ki7HT8tyRfVWWb8t8Zzd2HMntcoJU2Wmyacx8JE_5RsL6mQ6XvwoBNEKrqhOL7u3jb9PNnnMJ8dNNZ-KmeoLL26ADPOTl3ib9gcEM3NhNFMmu27pJ_jYsyFkuPKVVltwqxdNFeQ8TqG1lMYvGUeB9rwbwx7QLa8Xm9dCEF9g0-NZvRdOc-4Mh");'></div>
+<div class="absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full border-2 border-card-dark bg-primary/20 text-primary">
+<span class="text-xs font-bold">88%</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white">Emily Rodriguez</h3>
+<p class="text-sm text-gray-400">Marketing Lead at Growthify</p>
+<div class="mt-3 flex flex-wrap justify-center gap-2">
+<span class="rounded-full bg-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary">GMT-8</span>
+<span class="rounded-full bg-gray-700 px-2.5 py-0.5 text-xs font-medium text-gray-300">Marketing</span>
+</div>
+<p class="mt-4 text-sm text-gray-300 h-10">Wants a buddy for quiet co-working and motivation.</p>
+</div>
+<div class="mt-6 flex flex-col gap-2">
+<button class="flex w-full items-center justify-center rounded-lg bg-primary h-10 px-4 text-sm font-bold text-white hover:bg-primary/90 transition-colors">Connect</button>
+<button class="flex w-full items-center justify-center rounded-lg bg-border-dark h-10 px-4 text-sm font-bold text-gray-200 hover:bg-gray-700 transition-colors">View Profile</button>
+</div>
+</div>
+<div class="group relative flex flex-col rounded-xl border border-border-dark bg-card-dark p-6 transition-shadow hover:shadow-lg hover:shadow-primary/20">
+<div class="flex flex-grow flex-col items-center text-center">
+<div class="relative mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24" data-alt="Profile picture of David Lee" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBV117ueFkRw1Xu8Md-GipQVc6CDcxU4PRTGrqvnGxzEJq1FOOFZNYE5pwDT_6kXKRUMNAi8vzdeC8hArosI-5GRtXv1Pxf91b5ojiuMcdAyL3zjbA8SzAckxt9pNLphgmDV5ArfhGhMnk_uJLcEpsvQ-N1FX3UMj_NbdZ-W9xVpXmRZXJF7PduFXMOGROffdUxrLthkJFnXvoxpUbeWnO5eqaBL4fGjLOgFAihn3ZoMBMHfoGIGfvOC6qirI0dodCOPoQyUcYIe6HT");'></div>
+<div class="absolute -bottom-1 -right-1 flex h-8 w-8 items-center justify-center rounded-full border-2 border-card-dark bg-primary/20 text-primary">
+<span class="text-xs font-bold">85%</span>
+</div>
+</div>
+<h3 class="text-lg font-bold text-white">David Lee</h3>
+<p class="text-sm text-gray-400">Freelance Developer</p>
+<div class="mt-3 flex flex-wrap justify-center gap-2">
+<span class="rounded-full bg-primary/20 px-2.5 py-0.5 text-xs font-medium text-primary">GMT+8</span>
+<span class="rounded-full bg-gray-700 px-2.5 py-0.5 text-xs font-medium text-gray-300">React</span>
+</div>
+<p class="mt-4 text-sm text-gray-300 h-10">Loves brainstorming and pair programming sessions.</p>
+</div>
+<div class="mt-6 flex flex-col gap-2">
+<button class="flex w-full items-center justify-center rounded-lg bg-primary h-10 px-4 text-sm font-bold text-white hover:bg-primary/90 transition-colors">Connect</button>
+<button class="flex w-full items-center justify-center rounded-lg bg-border-dark h-10 px-4 text-sm font-bold text-gray-200 hover:bg-gray-700 transition-colors">View Profile</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

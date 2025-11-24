@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BuddyBloc - Focus Session</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3B82F6","secondary": "#8B5CF6","accent": "#EC4899","background-dark": "#111827","panel-dark": "#1F2937","text-primary-dark": "#F9FAFB","text-secondary-dark": "#9CA3AF","border-dark": "#374151",},
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-dark font-display text-text-primary-dark">
+<div class="flex h-screen w-full flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-border-dark px-6 py-4 shrink-0 bg-background-dark">
+<div class="flex items-center gap-4 text-text-primary-dark">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">BuddyBloc</h2>
+</div>
+<div class="flex-1 flex justify-center items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Profile picture of Sarah Lane" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBbk4S29YomCX6QzXQkBJXY4ko-idyyl4gLr6o08BtujDztTp9p1f0DNdsgBjRjPt7L5m_7smfHC8k-V0ABqydWZNRW413CyXpcwU29jfyjY0u5S9fOvB9rGoAb-2ZcC5-JWargat3fLBlbWv6ztLvuXpsPFoCNlCwVBRmcN2kIOCxDZaG_OKvE91Iq8rXLypw_2ij05r5r62Ci4p8-_Cg9LGRGw29z3SurycnPZQfj2McKhRq588b2hdTgfbxq6HWoJwMH7iZuNku1");'></div>
+<div>
+<h3 class="font-semibold text-text-primary-dark">Sarah Lane</h3>
+<p class="text-sm text-text-secondary-dark flex items-center gap-1.5"><span class="size-2 rounded-full bg-green-500 animate-pulse"></span>In a focus session</p>
+</div>
+<div class="w-px h-6 bg-border-dark mx-4"></div>
+<div class="flex items-center gap-2 text-text-secondary-dark">
+<span class="material-symbols-outlined !text-xl text-secondary">timer</span>
+<span class="font-medium text-text-primary-dark">01:23:45</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg bg-panel-dark text-text-secondary-dark hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Your profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBckk-h9tkxt69HZFa3U8DxDiWCyS2pebI5-jhfFUd4u5SbHXcTTqkKO62nhPTlzLsgBZzJHcOkxZXP-2K1bnOwr15CxtB_9nPnAIAYYYXwHXrdM_cea-xDUHrBrk69embysvcuqjb0AlJoNjo4WmB158GBanGcAOly6rA6nxCNwiTI-w-JTX2KA3-LWJPCDL14PanuFaxuHcdV1pN4cQjkS1wa5yLj_4qAZ0yD7uviOMJkfkzD-4zkw3b-eIgsWsgCPCvScWryzN97");'></div>
+</div>
+</header>
+<main class="flex flex-1 overflow-hidden">
+<div class="flex flex-1 flex-col items-center justify-center p-8 bg-black relative">
+<div class="relative w-full h-full max-w-7xl mx-auto flex items-center justify-center">
+<div class="aspect-video w-full rounded-xl overflow-hidden shadow-2xl bg-panel-dark">
+<img class="object-cover w-full h-full" data-alt="Live video feed of Sarah Lane at her desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdlQdYAxLB5_FXBM38qFRSwwxu3eeo0e84gvtPnvxHHtLu_vnE0JWmSGmRTnMZEpHp-Z5isbyiac-qmcfhQnF7bzAh1DgTTwZ7b12ePq81LfHBiLq9yVlTrst2T7yZOtMC3t7krKSzWRSEqrWmYRl9POrsdW_bLRErdqXdpvuw2SjxXlULR3Dy2kGqK-9-fxQZZa68xZqKS-L14mvvDzvnMQUjfP3jNWEKgCOpaGIXkMC4ZQPPjtOuIEnTABLFoxgU8EAJ80ryFaPx"/>
+<div class="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-lg text-sm font-medium">Sarah Lane</div>
+</div>
+</div>
+<div class="absolute bottom-8 right-8 w-64 h-auto aspect-video rounded-xl overflow-hidden shadow-lg border-2 border-primary">
+<img class="object-cover w-full h-full" data-alt="Your live video feed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2zEhEK3ufi5BXorrLUOJHox1FwNLFZsT8tHDC17kFZf5S9ih_zhz__Wgr_Fy5-xfZZRxCICNp667G7V9uMALeRU9MZgIScKEICOaehMPOS86uFpeOL6Umu1MrdWMAPwH4T7syvsXU-Iy-wQxK4fEjZ5wJfkw0K6cQcceo1iuFcJaTBT6gpeuri5IP2MCynO3vNAyYD68AOyho-LwaBAJV1E9xEpXLKgyJHew_bHt8pwu0HQ1TCy5s93UFZ2DwXbPMWJlst_QXt2Fd"/>
+<div class="absolute bottom-2 left-2 bg-black/50 backdrop-blur-sm px-2 py-0.5 rounded-md text-xs font-medium">You</div>
+</div>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center gap-4 px-6 py-3 bg-panel-dark/80 backdrop-blur-md rounded-full border border-border-dark/50 shadow-lg">
+<button class="p-3 text-text-primary-dark rounded-full hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="p-3 text-text-primary-dark rounded-full hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="p-3 text-text-primary-dark rounded-full hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">screen_share</span>
+</button>
+<div class="w-px h-auto my-2 bg-border-dark"></div>
+<button class="p-3 text-white bg-red-600 rounded-full hover:bg-red-700 transition-colors">
+<span class="material-symbols-outlined">call_end</span>
+</button>
+</div>
+</div>
+<aside class="w-96 flex flex-col border-l border-border-dark bg-panel-dark">
+<div class="flex-1 p-6 space-y-6 overflow-y-auto">
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0" data-alt="Profile picture of Sarah Lane" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWRgunnP0EJaKe8SW_ibdWQpPV_RLb4aS65g3jANB-XCFogeDaBphfwnnP3tAge2Sge-EyL7UGfEvRP4MFwM65arv_QaK_Iqh5tH7La9LrLcMF8b0rwozwVoDF8KpmR1HdryBZGFck18ualvBYgVFowbQjI78OwQPIR3TPKen8HCgC4vyHvdaCpXs5MEyfW3dB-Ff4c5Osraby_wU6XON9ydhtM029VhBsmjc4GyLpM5rSceySeMsq2fsZwqExqdzmDl6m81svRJKV");'></div>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-text-secondary-dark text-sm font-medium">Sarah Lane <span class="text-xs font-normal ml-1 opacity-70">10:30 AM</span></p>
+<div class="bg-background-dark text-text-primary-dark rounded-lg rounded-bl-none px-4 py-2.5 shadow-sm">
+<p class="text-base leading-normal">Hey! Ready to start our focus session? I'm working on the design specs.</p>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-3 justify-end">
+<div class="flex flex-col gap-1 items-end">
+<p class="text-text-secondary-dark text-sm font-medium">You <span class="text-xs font-normal ml-1 opacity-70">10:31 AM</span></p>
+<div class="bg-gradient-to-br from-primary to-secondary text-white rounded-lg rounded-br-none px-4 py-2.5 shadow-lg">
+<p class="text-base leading-normal">Sounds good! I'm ready. I'll be coding the new feature.</p>
+</div>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0" data-alt="Your profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCiL_sAaMYKL8vhTllksl1Q2pO2AOgM0l2LwWudj-CQPbiawHrMQJtpPm0W1jJr9pqLQLzEfrLEaeOXOq5UOdZftf6Grw914saBMvA8vELhA8M7pMXym2Lo8vm1g40ZpoGotn7zxx0xfHwNgXATVNqFNnUx58ArUxyWks38lROrM3f1WYYHWwb4ZhVq32MfdhiIZ4v7ETUSOHfJzn8spqBCC4HEMoyhbjbcYrUMWaD0HUsyJVFZyWyYsoWcvmmbIFkYv-jDsVLRxA2y");'></div>
+</div>
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 shrink-0" data-alt="Profile picture of Sarah Lane" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBjtGhCbhQUml7-k43Zt3m3dKsVq_YovW9dxQnlIGsNY7tfQFa-l43T156en9wG5fl_WaSzcEhMkaTAe_pBChpsYdD-kloluPI6qfnWIqXenRsKh-mUzwof2_HDjGnXeOWV2aVrKPF23T3TfoaUSlATJz6R_x-PzOA2LPz5iLUBUSdRkpcMfwuM1D42yKByO4eV1M7aDVKc62juViI4ANkbCgzqzZxJwzJidw0iQhMQGNO34GACspkn8p6qxLLojbSsHFDxOEgHUPaR");'></div>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-text-secondary-dark text-sm font-medium">Sarah Lane <span class="text-xs font-normal ml-1 opacity-70">10:32 AM</span></p>
+<div class="bg-background-dark text-text-primary-dark rounded-lg rounded-bl-none px-4 py-2.5 shadow-sm">
+<p class="text-base leading-normal">Great! Let me know if you need to see the mockups.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-border-dark">
+<div class="relative flex items-center">
+<button class="absolute left-3 text-text-secondary-dark hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<input class="w-full rounded-full border border-border-dark bg-background-dark py-2.5 pl-11 pr-24 focus:ring-2 focus:ring-primary focus:border-primary placeholder:text-text-secondary-dark text-text-primary-dark transition-all" placeholder="Type a message..." type="text"/>
+<div class="absolute right-2 flex items-center gap-1">
+<button class="flex h-8 w-8 items-center justify-center rounded-full text-text-secondary-dark hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined !text-xl">mood</span>
+</button>
+<button class="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined !text-xl">send</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+</main>
+</div>
+
+</body></html>

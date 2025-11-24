@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Prompterion - AI Prompt System</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#427cf0",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+            "accent-blue": "#89CFF0",
+            "text-dark": "#333333",
+            "background-panel": "#FFFFFF",
+            "subtle-gray": "#E0E0E0",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden text-text-dark dark:text-background-light">
+<!-- Top App Bar -->
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-50">
+<div class="flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">widgets</span>
+</div>
+<h1 class="text-xl font-bold leading-tight tracking-tight flex-1 text-center">Prompterion</h1>
+<div class="flex w-10 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pb-28">
+<!-- Hero Section -->
+<div class="px-4 pt-2 pb-4">
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[22rem] relative" data-alt="Abstract blue and purple swirling energy representing creativity and AI" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDM86lR6X5yG8R3jtF08tEvNxrDVdnhSk0NyzNM0c7Tl3qsxR8JgoUwB6vPGRsXtGd1HCqbUB_kJsszqt4ogm1-DM-1hN11_64N9rrRxgLfK3CUxtBV4odqENqw_kCpSjwg-zkodfVVr3efWHZDHvG6mjZs8ug1W-DF7jem6wMtKR1piKT2uS7mk7i9iCc5HscZU4NiinvPFdR5gKMIJUMb3zjk5CBANiDBF3Mo_WtLgdR0qpzdrJcnWWXgy6J8Toqj-xDwbSD3RkO6");'>
+<div class="flex flex-col p-6 text-white">
+<h2 class="tracking-tight text-4xl font-bold leading-tight">Ignite Your Creativity</h2>
+<p class="text-base font-normal leading-normal mt-2 opacity-90">The elemental AI prompt system.</p>
+</div>
+</div>
+</div>
+<!-- Search Bar -->
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-14 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full shadow-sm bg-background-panel dark:bg-background-dark/50 border border-subtle-gray/50 dark:border-white/10">
+<div class="text-text-dark/60 dark:text-white/60 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-dark dark:text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-dark/50 dark:placeholder:text-white/50 px-2 text-base font-normal leading-normal" placeholder="Search for prompts..." value=""/>
+<div class="text-text-dark/60 dark:text-white/60 flex items-center justify-center pr-4">
+<span class="material-symbols-outlined">tune</span>
+</div>
+</div>
+</label>
+</div>
+<!-- Primary CTA Buttons -->
+<div class="grid grid-cols-2 gap-4 px-4 py-3">
+<button class="flex items-center justify-center gap-2 h-14 w-full rounded-lg bg-accent-blue text-white font-bold text-base shadow-lg shadow-accent-blue/30 transition-transform active:scale-95">
+<span class="material-symbols-outlined">explore</span>
+<span>Explore Prompts</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-14 w-full rounded-lg bg-background-panel dark:bg-white/10 text-text-dark dark:text-white font-bold text-base shadow-md border border-subtle-gray/60 dark:border-white/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined">add_circle</span>
+<span>Create New</span>
+</button>
+</div>
+<!-- Trending Prompts Section -->
+<div class="flex flex-col py-4">
+<h3 class="text-xl font-bold leading-tight tracking-tight px-4 pb-3">Trending Prompts</h3>
+<div class="flex gap-4 overflow-x-auto px-4 pb-2" style="scrollbar-width: none; -ms-overflow-style: none;">
+<div class="relative flex w-40 shrink-0 flex-col overflow-hidden rounded-lg bg-background-panel dark:bg-white/5 shadow-md border border-subtle-gray/30 dark:border-white/10">
+<img class="h-40 w-full object-cover" data-alt="A futuristic cityscape at night with neon lights reflecting on wet streets, in a cyberpunk style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkFOBqPqW_SgZBr0tdwFtZvOUKXRNKesfuNAiO2uR_2FUftua0ewGDH4du3FVrC6ZVFGM3iQ7406cRk_f-AbsRAF_6lIsWGH6Cq475vwNhd_GYfW3xYDSNfxBf3IElndxS2WEjCyEpGcGHyCSyStiMKy5R1iLWOv0q3z7x4-ccIMZWnFBsACktHolul4O60ztBEHMIqvJT22c2cXTbT3e4Nci9TD-zfJYff5aarbzJhwN2nsWlxpRxKEMzYvv56BVFmOO_8k5hforO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 text-white">
+<p class="text-sm font-bold leading-tight">Cyberpunk Cityscape</p>
+<p class="text-xs font-normal opacity-80 mt-1">Art</p>
+</div>
+</div>
+<div class="relative flex w-40 shrink-0 flex-col overflow-hidden rounded-lg bg-background-panel dark:bg-white/5 shadow-md border border-subtle-gray/30 dark:border-white/10">
+<img class="h-40 w-full object-cover" data-alt="An ethereal, dreamy forest with glowing mushrooms and soft light filtering through the trees." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZxlqxgQ5YxiFyrXmDrJeR351DS-Oh7dDitAgWSjSQnxUUq4tGtH77e0SwjQdlbQ7avDScSDX8KeAIKkXTiZBXMXUWeoSrXnUmE6ol0GbgxpsFgMLJMH_ynSJ8EJyXAzchnzl0N5u3I_rFHYBMhvY-kLmJsuPQEFT4MULkCmvlEBDjIlV94170QJZYlhe3ie9-EldPlblXwBzYXgrdPCe4t55VKAZc7PlKqg3O73bnABxDVFhM-cgh8HIL7-6qZPbwTLN1qdCZHhJE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 text-white">
+<p class="text-sm font-bold leading-tight">Enchanted Forest</p>
+<p class="text-xs font-normal opacity-80 mt-1">Fantasy</p>
+</div>
+</div>
+<div class="relative flex w-40 shrink-0 flex-col overflow-hidden rounded-lg bg-background-panel dark:bg-white/5 shadow-md border border-subtle-gray/30 dark:border-white/10">
+<img class="h-40 w-full object-cover" data-alt="Abstract 3D rendering of smooth, flowing liquid shapes in pastel colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCa33Cs0hrBSigRMNIWYW0UZtE53DvNgYePO0C_n_cizgMsqaYWCgoLRFK7kCjofqu4qNC1PAs1RNFL16REQUHDjdnzcXO9AtgdnlKryg2RLHC0Xf3umiaX15OIBsru5JmkwXRneA8ewvd5jXXIHQ4-OvfsVW5ttA3Q1f0JTVdOQFF6nvFdzwWdKYGTxLXAseJTWjSW3vkWkWQVCI7uzPw96jAshwTTeVgZSM64A_CFwlPYhxJ8U_OdS4uDgn6K4fIYB8t6RdlWztf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 text-white">
+<p class="text-sm font-bold leading-tight">Liquid Abstract Art</p>
+<p class="text-xs font-normal opacity-80 mt-1">Design</p>
+</div>
+</div>
+<div class="relative flex w-40 shrink-0 flex-col overflow-hidden rounded-lg bg-background-panel dark:bg-white/5 shadow-md border border-subtle-gray/30 dark:border-white/10">
+<img class="h-40 w-full object-cover" data-alt="A vintage photograph of an astronaut standing on a barren alien planet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeij8eJD7_9-FYZgkvZxiWgTBE8icOTnXife3Z77vExw-XPO_oKsVeHoWK7lQ_b7iSXQROh42Y_xa_oieGd8SB0glxLRorPwBkcr8Aep1Eo8Mzv4E9uS8CQwhfnw0JEfnjZHPJbJIx3Ta2t0IAV8K3u2yPR16NUIK5VxFOI6QkVqY5xYSD9ui5BHk9jOxKDFzdCcL80kgSJFO7WAhlOTG8LUG5N0khdHT1RkHfvZWcet2wC4yb5YiAFu_SNB0A1Mbkzu_A-IE2AXd0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-3 text-white">
+<p class="text-sm font-bold leading-tight">Retro Sci-Fi Poster</p>
+<p class="text-xs font-normal opacity-80 mt-1">Writing</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 h-20 bg-background-panel/80 dark:bg-background-dark/80 backdrop-blur-lg border-t border-subtle-gray/50 dark:border-white/10">
+<div class="flex h-full items-center justify-around">
+<button class="flex flex-col items-center justify-center gap-1 w-20 text-accent-blue">
+<span class="material-symbols-outlined fill-icon">home</span>
+<p class="text-xs font-bold">Home</p>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-20 text-text-dark/60 dark:text-white/60">
+<span class="material-symbols-outlined">explore</span>
+<p class="text-xs font-medium">Explore</p>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-20 text-text-dark/60 dark:text-white/60">
+<span class="material-symbols-outlined">add_circle</span>
+<p class="text-xs font-medium">Create</p>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 w-20 text-text-dark/60 dark:text-white/60">
+<span class="material-symbols-outlined">person</span>
+<p class="text-xs font-medium">Profile</p>
+</button>
+</div>
+</nav>
+</div>
+</body></html>

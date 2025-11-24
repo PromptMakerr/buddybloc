@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Management - BuddyBloc Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header"><a href="index.html" class="logo">
+                    <div class="logo-icon">B</div><span>BuddyBloc Admin</span>
+                </a></div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item"><span
+                        class="material-symbols-outlined">dashboard</span><span>Overview</span></a>
+                <a href="admin-users.html" class="nav-item"><span
+                        class="material-symbols-outlined">group</span><span>Users</span></a>
+                <a href="admin-content.html" class="nav-item active"><span
+                        class="material-symbols-outlined">edit_note</span><span>Content</span></a>
+                <a href="admin-analytics.html" class="nav-item"><span
+                        class="material-symbols-outlined">analytics</span><span>Analytics</span></a>
+                <a href="admin-moderation.html" class="nav-item"><span
+                        class="material-symbols-outlined">shield</span><span>Moderation</span></a>
+                <a href="admin-settings.html" class="nav-item"><span
+                        class="material-symbols-outlined">settings</span><span>Settings</span></a>
+                <a href="admin-team.html" class="nav-item"><span
+                        class="material-symbols-outlined">admin_panel_settings</span><span>Team</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1 style="font-size:var(--font-size-3xl)">Content Management</h1>
+                <button class="btn btn-primary"><span class="material-symbols-outlined">add</span><span>New
+                        Post</span></button>
+            </header>
+
+            <div class="dashboard-body">
+                <div data-tab-group>
+                    <div class="tabs">
+                        <div class="tab active" data-tab="pages">Website Pages</div>
+                        <div class="tab" data-tab="blog">Blog & Announcements</div>
+                        <div class="tab" data-tab="media">Media Library</div>
+                        <div class="tab" data-tab="templates">Email Templates</div>
+                    </div>
+
+                    <div class="tab-panel active" data-tab-panel="pages">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Website Pages</h2>
+                            </div>
+                            <div class="card-body">
+                                <div style="display:grid;gap:var(--spacing-md)">
+                                    <div
+                                        style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md);background:var(--color-surface-elevated);border-radius:var(--radius-md)">
+                                        <div>
+                                            <h4>Homepage</h4>
+                                            <p
+                                                style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                                Main landing page</p>
+                                        </div>
+                                        <button class="btn btn-outline">Edit</button>
+                                    </div>
+                                    <div
+                                        style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md);background:var(--color-surface-elevated);border-radius:var(--radius-md)">
+                                        <div>
+                                            <h4>About Us</h4>
+                                            <p
+                                                style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                                Company information</p>
+                                        </div>
+                                        <button class="btn btn-outline">Edit</button>
+                                    </div>
+                                    <div
+                                        style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md);background:var(--color-surface-elevated);border-radius:var(--radius-md)">
+                                        <div>
+                                            <h4>FAQ</h4>
+                                            <p
+                                                style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                                Frequently asked questions</p>
+                                        </div>
+                                        <button class="btn btn-outline">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="blog">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Blog Posts & Announcements</h2>
+                            </div>
+                            <div class="card-body">
+                                <p style="color:var(--color-text-secondary);margin-bottom:var(--spacing-md)">Manage blog
+                                    posts and platform announcements</p>
+                                <button class="btn btn-primary w-full">Create New Post</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="media">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Media Library</h2>
+                            </div>
+                            <div class="card-body">
+                                <div
+                                    style="border:2px dashed var(--color-border);border-radius:var(--radius-lg);padding:var(--spacing-3xl);text-align:center">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size:4rem;color:var(--color-text-muted);margin-bottom:var(--spacing-md)">cloud_upload</span>
+                                    <p style="color:var(--color-text-secondary)">Drag and drop files here or click to
+                                        browse</p>
+                                    <button class="btn btn-primary" style="margin-top:var(--spacing-md)">Upload
+                                        Files</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" data-tab-panel="templates">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2 class="card-title">Email Templates</h2>
+                            </div>
+                            <div class="card-body">
+                                <div style="display:grid;gap:var(--spacing-md)">
+                                    <div
+                                        style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md);background:var(--color-surface-elevated);border-radius:var(--radius-md)">
+                                        <div>
+                                            <h4>Welcome Email</h4>
+                                            <p
+                                                style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                                Sent to new users</p>
+                                        </div>
+                                        <button class="btn btn-outline">Edit</button>
+                                    </div>
+                                    <div
+                                        style="display:flex;justify-content:space-between;align-items:center;padding:var(--spacing-md);background:var(--color-surface-elevated);border-radius:var(--radius-md)">
+                                        <div>
+                                            <h4>Session Reminder</h4>
+                                            <p
+                                                style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin:0">
+                                                Reminder before sessions</p>
+                                        </div>
+                                        <button class="btn btn-outline">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

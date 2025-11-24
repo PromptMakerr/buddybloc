@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Management - BuddyBloc Admin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse
+        }
+
+        th,
+        td {
+            padding: var(--spacing-sm);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border)
+        }
+
+        th {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            background: var(--color-surface-elevated)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header"><a href="index.html" class="logo">
+                    <div class="logo-icon">B</div><span>BuddyBloc Admin</span>
+                </a></div>
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html" class="nav-item"><span
+                        class="material-symbols-outlined">dashboard</span><span>Overview</span></a>
+                <a href="admin-users.html" class="nav-item"><span
+                        class="material-symbols-outlined">group</span><span>Users</span></a>
+                <a href="admin-content.html" class="nav-item"><span
+                        class="material-symbols-outlined">edit_note</span><span>Content</span></a>
+                <a href="admin-analytics.html" class="nav-item"><span
+                        class="material-symbols-outlined">analytics</span><span>Analytics</span></a>
+                <a href="admin-moderation.html" class="nav-item"><span
+                        class="material-symbols-outlined">shield</span><span>Moderation</span></a>
+                <a href="admin-settings.html" class="nav-item"><span
+                        class="material-symbols-outlined">settings</span><span>Settings</span></a>
+                <a href="admin-team.html" class="nav-item active"><span
+                        class="material-symbols-outlined">admin_panel_settings</span><span>Team</span></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1 style="font-size:var(--font-size-3xl)">Admin Team</h1>
+                <button class="btn btn-primary"><span class="material-symbols-outlined">person_add</span><span>Invite
+                        Admin</span></button>
+            </header>
+
+            <div class="dashboard-body">
+                <!-- Admin Users Table -->
+                <div class="card" style="margin-bottom:var(--spacing-xl)">
+                    <div class="card-header">
+                        <h2 class="card-title">Admin Users</h2>
+                    </div>
+                    <div class="card-body" style="padding:0">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Last Login</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div style="display:flex;align-items:center;gap:var(--spacing-sm)">
+                                            <div class="avatar avatar-sm">JD</div><strong>Jordan Davis</strong>
+                                        </div>
+                                    </td>
+                                    <td>jordan@buddybloc.com</td>
+                                    <td>
+                                        <div class="badge badge-primary">Super Admin</div>
+                                    </td>
+                                    <td>2 hours ago</td>
+                                    <td>
+                                        <div class="badge badge-success">Active</div>
+                                    </td>
+                                    <td><button class="btn btn-outline"
+                                            style="padding:0.5rem 1rem;font-size:var(--font-size-sm)">Edit</button></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display:flex;align-items:center;gap:var(--spacing-sm)">
+                                            <div class="avatar avatar-sm">AM</div><strong>Anna Martinez</strong>
+                                        </div>
+                                    </td>
+                                    <td>anna@buddybloc.com</td>
+                                    <td>
+                                        <div class="badge badge-secondary">Moderator</div>
+                                    </td>
+                                    <td>1 day ago</td>
+                                    <td>
+                                        <div class="badge badge-success">Active</div>
+                                    </td>
+                                    <td><button class="btn btn-outline"
+                                            style="padding:0.5rem 1rem;font-size:var(--font-size-sm)">Edit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Roles & Permissions -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Roles & Permissions</h2>
+                    </div>
+                    <div class="card-body">
+                        <div style="display:grid;gap:var(--spacing-md)">
+                            <div
+                                style="padding:var(--spacing-lg);background:var(--color-surface-elevated);border-radius:var(--radius-lg)">
+                                <h4 style="margin-bottom:var(--spacing-sm)">Super Admin</h4>
+                                <p
+                                    style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-bottom:var(--spacing-md)">
+                                    Full access to all features</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                                    <span class="badge badge-success">User Management</span>
+                                    <span class="badge badge-success">Content</span>
+                                    <span class="badge badge-success">Analytics</span>
+                                    <span class="badge badge-success">Moderation</span>
+                                    <span class="badge badge-success">Settings</span>
+                                    <span class="badge badge-success">Team</span>
+                                </div>
+                            </div>
+
+                            <div
+                                style="padding:var(--spacing-lg);background:var(--color-surface-elevated);border-radius:var(--radius-lg)">
+                                <h4 style="margin-bottom:var(--spacing-sm)">Moderator</h4>
+                                <p
+                                    style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-bottom:var(--spacing-md)">
+                                    Access to moderation and user management</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                                    <span class="badge badge-success">User Management</span>
+                                    <span class="badge badge-success">Moderation</span>
+                                    <span class="badge badge-secondary">Analytics (View Only)</span>
+                                </div>
+                            </div>
+
+                            <div
+                                style="padding:var(--spacing-lg);background:var(--color-surface-elevated);border-radius:var(--radius-lg)">
+                                <h4 style="margin-bottom:var(--spacing-sm)">Support</h4>
+                                <p
+                                    style="font-size:var(--font-size-sm);color:var(--color-text-muted);margin-bottom:var(--spacing-md)">
+                                    Limited access for customer support</p>
+                                <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+                                    <span class="badge badge-secondary">User Management (View Only)</span>
+                                    <span class="badge badge-success">Content</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

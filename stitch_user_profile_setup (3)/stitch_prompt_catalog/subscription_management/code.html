@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Subscription Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+    .glossy-button {
+        background-image: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 100%);
+        box-shadow: 0 4px 15px -2px rgba(66, 124, 240, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        transition: all 0.2s ease-in-out;
+    }
+    .glossy-button:hover {
+        box-shadow: 0 6px 20px -3px rgba(66, 124, 240, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+    }
+    .card-stripes {
+        background-color: #e9eff3;
+        background-image: repeating-linear-gradient(
+            135deg,
+            transparent,
+            transparent 10px,
+            rgba(137, 207, 240, 0.1) 10px,
+            rgba(137, 207, 240, 0.1) 20px
+        );
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#427cf0",
+            "accent": "#89CFF0",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+            "panel-light": "#e9eff3",
+            "text-primary-light": "#333333",
+            "text-secondary-light": "#757575",
+          },
+          fontFamily: {
+            "display": ["Public Sans"]
+          },
+          borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "3rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<button class="text-text-primary-light dark:text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-text-primary-light dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Subscription</h2>
+<div class="size-12 shrink-0"></div>
+</div>
+<!-- Current Plan Section -->
+<h1 class="text-text-primary-light dark:text-white tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-6">Your Current Plan</h1>
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-lg card-stripes dark:bg-slate-800 shadow-[0_4px_12px_rgba(0,0,0,0.05)] bg-panel-light">
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-4 p-5">
+<div>
+<p class="text-text-primary-light dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">Prompterion Pro</p>
+<div class="flex items-end gap-1">
+<p class="text-primary dark:text-accent text-lg font-semibold">$19.99</p>
+<p class="text-text-secondary-light dark:text-slate-400 text-base font-normal leading-normal">/ month</p>
+</div>
+<p class="text-text-secondary-light dark:text-slate-400 text-sm font-normal leading-normal mt-1">Renews on December 31, 2024</p>
+</div>
+<div class="border-t border-slate-300/50 dark:border-slate-700 pt-4">
+<label class="flex items-center gap-x-3 py-1.5">
+<span class="material-symbols-outlined text-primary dark:text-accent text-xl">check_circle</span>
+<p class="text-text-primary-light dark:text-slate-200 text-base font-normal leading-normal">Unlimited AI prompts</p>
+</label>
+<label class="flex items-center gap-x-3 py-1.5">
+<span class="material-symbols-outlined text-primary dark:text-accent text-xl">check_circle</span>
+<p class="text-text-primary-light dark:text-slate-200 text-base font-normal leading-normal">Access to premium models</p>
+</label>
+<label class="flex items-center gap-x-3 py-1.5">
+<span class="material-symbols-outlined text-primary dark:text-accent text-xl">check_circle</span>
+<p class="text-text-primary-light dark:text-slate-200 text-base font-normal leading-normal">Priority support</p>
+</label>
+</div>
+<button class="glossy-button flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-primary text-white text-base font-medium leading-normal mt-2">
+<span class="truncate">Change Plan</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Payment Method Section -->
+<h1 class="text-text-primary-light dark:text-white tracking-light text-[28px] font-bold leading-tight px-4 text-left pb-3 pt-4">Payment Method</h1>
+<div class="px-4 pb-4">
+<div class="flex items-center justify-between rounded-lg bg-white dark:bg-slate-800 shadow-[0_4px_12px_rgba(0,0,0,0.05)] p-5">
+<div class="flex items-center gap-4">
+<img class="h-8 w-12 rounded-sm object-contain" data-alt="Visa card logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJl26AOSOymsoxLQ-5FR_vqnQG_78eXagdUojtPsZqLllvBfIaUtMDX0784kMk0OvqvwDL7tgVxwN6G5nmMGa3AmY3wDiufBD3KgQztJWvlzxA0tCm6K4AEM0zWuCgFFfPt6EmyBEsd6Adw2MopQioCAXwKNatSiXsldYcjZ486AQ5SMyGojpGVUVQ0TQeyxkbv8SbRQXrEqmkAaHIkdLEyHlpePpJ_vDsjCUrBC7BiWWngHiwT_4AYi5tH562wmOKV1kfO-Jo7sRN"/>
+<div class="flex flex-col">
+<p class="text-text-primary-light dark:text-white text-base font-medium leading-normal">Visa •••• 1234</p>
+<p class="text-text-secondary-light dark:text-slate-400 text-sm font-normal leading-normal">Expires 08/26</p>
+</div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-slate-200/80 dark:bg-slate-700 text-text-primary-light dark:text-white text-sm font-medium leading-normal transition-colors hover:bg-slate-300/80 dark:hover:bg-slate-600">
+<span class="truncate">Update</span>
+</button>
+</div>
+</div>
+<!-- Cancellation Section -->
+<div class="flex-grow"></div>
+<div class="px-4 pb-8 pt-4 text-center">
+<p class="text-text-secondary-light dark:text-slate-400 text-sm mb-4">You can cancel your subscription at any time. Your Pro access will remain until the end of the current billing period.</p>
+<button class="text-primary dark:text-accent font-medium hover:underline">Cancel Subscription</button>
+</div>
+</div>
+</body></html>

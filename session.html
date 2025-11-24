@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Session - BuddyBloc</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+        }
+
+        .session-layout {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: var(--spacing-lg);
+            padding: var(--spacing-xl);
+            min-height: 100vh;
+            background: var(--color-background)
+        }
+
+        .video-area {
+            background: var(--color-surface);
+            border-radius: var(--radius-2xl);
+            padding: var(--spacing-xl);
+            border: 1px solid var(--color-border)
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg)
+        }
+
+        .timer {
+            font-size: 4rem;
+            font-weight: 900;
+            text-align: center;
+            margin: var(--spacing-xl) 0;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .session-controls {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl)
+        }
+
+        .control-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base)
+        }
+
+        .control-btn.mute {
+            background: var(--color-surface-elevated);
+            color: var(--color-text-primary)
+        }
+
+        .control-btn.end {
+            background: #EF4444;
+            color: white
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="session-layout">
+        <div>
+            <!-- Video Area -->
+            <div class="video-area">
+                <div
+                    style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--spacing-md)">
+                    <h2>Focus Session with Sarah Lane</h2>
+                    <div class="badge badge-success">Live</div>
+                </div>
+
+                <div class="video-placeholder">
+                    <div style="text-align:center">
+                        <div class="avatar avatar-xl" style="margin:0 auto var(--spacing-md)">SL</div>
+                        <p style="color:var(--color-text-secondary)">Video will appear here</p>
+                    </div>
+                </div>
+
+                <!-- Timer -->
+                <div class="timer">01:23:45</div>
+
+                <!-- Session Controls -->
+                <div class="session-controls">
+                    <button class="control-btn mute"><span class="material-symbols-outlined">mic</span></button>
+                    <button class="control-btn mute"><span class="material-symbols-outlined">videocam</span></button>
+                    <button class="control-btn mute"><span
+                            class="material-symbols-outlined">screen_share</span></button>
+                    <button class="control-btn end" data-modal-open="endSessionModal"><span
+                            class="material-symbols-outlined">call_end</span></button>
+                </div>
+
+                <!-- Goals Panel -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title" style="font-size:var(--font-size-lg)">Session Goals</h3>
+                    </div>
+                    <div class="card-body">
+                        <label
+                            style="display:flex;align-items:center;gap:var(--spacing-sm);padding:var(--spacing-sm);cursor:pointer">
+                            <input type="checkbox" class="form-checkbox" checked>
+                            <span>Complete project documentation</span>
+                        </label>
+                        <label
+                            style="display:flex;align-items:center;gap:var(--spacing-sm);padding:var(--spacing-sm);cursor:pointer">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>Review code pull requests</span>
+                        </label>
+                        <label
+                            style="display:flex;align-items:center;gap:var(--spacing-sm);padding:var(--spacing-sm);cursor:pointer">
+                            <input type="checkbox" class="form-checkbox">
+                            <span>Plan next sprint</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div>
+            <div class="card" style="margin-bottom:var(--spacing-lg)">
+                <div class="card-header">
+                    <h3 class="card-title" style="font-size:var(--font-size-lg)">Your Buddy</h3>
+                </div>
+                <div class="card-body">
+                    <div style="display:flex;align-items:center;gap:var(--spacing-md);margin-bottom:var(--spacing-md)">
+                        <div class="avatar avatar-lg">
+                            <div class="avatar-status online"></div>SL
+                        </div>
+                        <div>
+                            <h4 style="margin-bottom:0.25rem">Sarah Lane</h4>
+                            <div class="rating-display" style="font-size:var(--font-size-sm)">
+                                <div class="rating-stars"><span class="star active">★</span><span
+                                        class="star active">★</span><span class="star active">★</span><span
+                                        class="star active">★</span><span class="star active">★</span></div>
+                                <span class="rating-value">4.9</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline w-full"><span
+                            class="material-symbols-outlined">person</span><span>View Profile</span></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title" style="font-size:var(--font-size-lg)">Quick Chat</h3>
+                </div>
+                <div class="card-body">
+                    <div
+                        style="height:200px;overflow-y:auto;margin-bottom:var(--spacing-md);padding:var(--spacing-sm);background:var(--color-surface-elevated);border-radius:var(--radius-md)">
+                        <p
+                            style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-bottom:var(--spacing-sm)">
+                            <strong>Sarah:</strong> Let's do this! 💪</p>
+                        <p style="font-size:var(--font-size-sm);color:var(--color-text-secondary)"><strong>You:</strong>
+                            Ready to focus!</p>
+                    </div>
+                    <div style="display:flex;gap:var(--spacing-sm)">
+                        <input type="text" class="form-input" placeholder="Type a message..." style="flex:1">
+                        <button class="btn btn-primary"><span class="material-symbols-outlined">send</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Session Modal -->
+    <div class="modal" id="endSessionModal">
+        <div class="modal-content" style="max-width:500px">
+            <div class="modal-header">
+                <h2 class="modal-title">End Session</h2>
+                <button class="modal-close" data-modal-close>&times;</button>
+            </div>
+            <div class="modal-body">
+                <h3 style="margin-bottom:var(--spacing-md)">Great work! 🎉</h3>
+                <p style="margin-bottom:var(--spacing-lg)">You completed a 1h 24m focus session with Sarah.</p>
+
+                <div class="form-group">
+                    <label class="form-label">Rate your buddy</label>
+                    <div class="star-rating">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">★</span>
+                        <input type="hidden" name="rating" value="0">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Leave a review (optional)</label>
+                    <textarea class="form-textarea" rows="3" placeholder="Share your experience..."></textarea>
+                </div>
+
+                <div style="display:flex;gap:var(--spacing-sm)">
+                    <button class="btn btn-secondary" style="flex:1">Goals: 2/3</button>
+                    <button class="btn btn-primary" style="flex:1">Schedule Next</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-modal-close>Skip</button>
+                <button class="btn btn-primary">Submit & Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
