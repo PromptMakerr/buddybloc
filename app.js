@@ -1,92 +1,149 @@
-// ===================================
-// BuddyBloc - Shared Application JavaScript
-// ===================================
 
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function () {
+async function initAuthListener() {
+    if (!window.supabaseClient) return;
 
-    // ===================================
-    // Initialize Demo Data
-    // ===================================
-    initializeDemoData();
+    const { data: { subscription } } = window.supabaseClient.auth.onAuthStateChange((event, session) => {
+        if (event === 'SIGNED_IN') {
+            console.log('User signed in:', session.user);
+            // Optional: Redirect if on login/signup page
+            if (window.location.pathname.includes('login.html') || window.location.pathname.includes('signup.html')) {
+                window.location.href = 'dashboard.html';
+            }
+        } else if (event === 'SIGNED_OUT') {
+            console.log('User signed out');
+            // Optional: Redirect if on protected page
+            if (window.location.pathname.includes('dashboard.html') || window.location.pathname.includes('matchmaking.html')) {
+                window.location.href = 'login.html';
+            }
+        }
+    });
+}
 
-    // ===================================
-    // Navigation Handling
-    // ===================================
-    setupNavigation();
+async function handleSignup(formData) {
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const fullName = formData.get('fullName');
+    const jobTitle = formData.get('jobTitle');
+    const bio = formData.get('bio');
+    const city = formData.get('city');
+    const postalCode = formData.get('postalCode');
+    const timezone = formData.get('timezone');
+    const workStyle = formData.get('workStyle');
 
-    // ===================================
-    // Form Validation
-    // ===================================
-    setupFormValidation();
+    // Collect interests
+    const interests = [];
+    document.querySelectorAll('input[name="interests"]:checked').forEach(cb => {
+        interests.push(cb.value);
+    });
 
-    // ===================================
-    // Modal Controls
-    // ===================================
-    setupModals();
+    try {
+        const { data, error } = await window.supabaseClient.auth.signUp({
+            email: email,
+            password: password,
+            options: {
+                data: {
+                    full_name: fullName,
+                    job_title: jobTitle,
+                    bio: bio,
+                    city: city,
+                    postal_code: postalCode,
+                    timezone: timezone,
+                    work_style: workStyle,
+                    interests: interests
+                }
+            }
+        });
 
-    // ===================================
-    // Tab Switching
-    // ===================================
-    setupTabs();
+        if (error) throw error;
 
-    // ===================================
-    // Sidebar Toggle
-    // ===================================
-    setupSidebar();
+        // Create profile record (optional, if you want a separate table)
+        // For now, we store metadata in auth.users which is accessible via session
 
-    // ===================================
-    // Notifications
-    // ===================================
-    setupNotifications();
+        showNotification('Account created! Please check your email to verify.', 'success');
 
-    // ===================================
-    // Star Rating
-    // ===================================
-    setupStarRating();
+        // Optional: Auto-login logic or wait for verification
+        // If email confirmation is disabled in Supabase, they are logged in automatically.
+        // If enabled, they need to check email.
 
-    // ===================================
-    // Badge Progress
-    // ===================================
-    setupBadgeProgress();
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 3000);
 
-});
-
-// ===================================
-// Demo Data Management
-// ===================================
-function initializeDemoData() {
-    if (!localStorage.getItem('buddybloc_user')) {
-        const demoUser = {
-            id: 1,
-            name: 'Jordan Smith',
-            email: 'jordan@example.com',
-            avatar: '',
-            rating: 4.8,
-            reliability: 96,
-            sessionsCompleted: 127,
-            hoursCompleted: 342,
-            currentStreak: 15,
-            badges: ['welcome', 'first_session', '7_day_streak', 'bronze_buddy'],
-            verifications: ['email', 'linkedin'],
-            memberSince: '2024-01-15'
-        };
-        localStorage.setItem('buddybloc_user', JSON.stringify(demoUser));
+    } catch (error) {
+        console.error('Signup error:', error);
+        showNotification(error.message, 'error');
     }
 }
 
-function getCurrentUser() {
-    const userStr = localStorage.getItem('buddybloc_user');
-    return userStr ? JSON.parse(userStr) : null;
-}
+async function handleLogin(formData) {
+    const email = formData.get('email');
+    const password = formData.get('password');
+    const remember = formData.get('remember');
 
-function updateUser(updates) {
-    const user = getCurrentUser();
-    if (user) {
-        Object.assign(user, updates);
-        localStorage.setItem('buddybloc_user', JSON.stringify(user));
+    try {
+        const { data, error } = await window.supabaseClient.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
+
+        if (error) throw error;
+
+        showNotification('Login successful! Redirecting...', 'success');
+        setTimeout(() => {
+            window.location.href = 'dashboard.html';
+        }, 1000);
+
+    } catch (error) {
+        console.error('Login error:', error);
+        showNotification(error.message, 'error');
     }
 }
+
+async function handleLogout() {
+    try {
+        const { error } = await window.supabaseClient.auth.signOut();
+        if (error) throw error;
+        window.location.href = 'index.html';
+    } catch (error) {
+        console.error('Logout error:', error);
+        showNotification('Error logging out', 'error');
+    }
+}
+
+// --------------------------------------------------
+// Auth guard: redirect unauthenticated users
+function requireAuth() {
+    const user = window.supabaseClient?.auth?.user();
+    if (!user) {
+        console.warn('No authenticated user, redirecting to login');
+        window.location.href = 'login.html';
+    }
+}
+
+// --------------------------------------------------
+// Load profile information and display user name
+async function loadProfile() {
+    try {
+        const user = window.supabaseClient?.auth?.user();
+        if (!user) return;
+        const { data, error } = await window.supabaseClient
+            .from('profiles')
+            .select('full_name')
+            .eq('id', user.id)
+            .single();
+        if (error) {
+            console.error('Profile load error:', error);
+            return;
+        }
+        const nameEl = document.getElementById('profileName');
+        if (nameEl && data && data.full_name) {
+            nameEl.textContent = data.full_name;
+        }
+    } catch (e) {
+        console.error('Unexpected error loading profile:', e);
+    }
+}
+
 
 // ===================================
 // Navigation
@@ -105,17 +162,26 @@ function setupNavigation() {
             }
         });
     });
+
+    // Logout button handler
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            handleLogout();
+        });
+    }
 }
 
 // ===================================
-// Form Validation
+// Form Validation & Submission
 // ===================================
 function setupFormValidation() {
     const forms = document.querySelectorAll('form[data-validate]');
 
     forms.forEach(form => {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault(); // CRITICAL: Prevent default form submission
 
             let isValid = true;
             const inputs = form.querySelectorAll('input[required], textarea[required]');
@@ -127,8 +193,37 @@ function setupFormValidation() {
             });
 
             if (isValid) {
-                // Form is valid, handle submission
-                handleFormSubmit(form);
+                // Show loading state
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn ? submitBtn.innerHTML : '';
+
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
+                }
+
+                try {
+                    const formData = new FormData(form);
+
+                    if (form.id === 'signupForm') {
+                        await handleSignup(formData);
+                    } else if (form.id === 'loginForm') {
+                        await handleLogin(formData);
+                    } else {
+                        // Generic form (e.g. contact)
+                        console.log('Generic form submitted');
+                        showNotification('Form submitted successfully', 'success');
+                    }
+                } catch (err) {
+                    console.error('Form submission error:', err);
+                    showNotification('An unexpected error occurred', 'error');
+                } finally {
+                    // Restore button state
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                    }
+                }
             }
         });
 
@@ -215,44 +310,14 @@ function clearError(input) {
     }
 }
 
-function handleFormSubmit(form) {
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    // Show loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner"></span> Processing...';
-    }
-
-    // Simulate API call
-    setTimeout(() => {
-        console.log('Form submitted:', data);
-        showNotification('Success! Form submitted.', 'success');
-
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = submitBtn.getAttribute('data-original-text') || 'Submit';
-        }
-
-        // Handle specific form actions
-        if (form.id === 'loginForm') {
-            window.location.href = 'dashboard.html';
-        } else if (form.id === 'signupForm') {
-            window.location.href = 'dashboard.html';
-        }
-    }, 1500);
-}
-
 // ===================================
 // Modals
 // ===================================
 function setupModals() {
-    // Open modal
-    document.querySelectorAll('[data-modal-open]').forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const modalId = trigger.getAttribute('data-modal-open');
+    document.querySelectorAll('[data-modal-trigger]').forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = trigger.getAttribute('data-modal-trigger');
             const modal = document.getElementById(modalId);
             if (modal) {
                 modal.classList.add('active');
@@ -261,10 +326,9 @@ function setupModals() {
         });
     });
 
-    // Close modal
-    document.querySelectorAll('[data-modal-close]').forEach(trigger => {
-        trigger.addEventListener('click', () => {
-            const modal = trigger.closest('.modal');
+    document.querySelectorAll('[data-modal-close]').forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+            const modal = closeBtn.closest('.modal');
             if (modal) {
                 modal.classList.remove('active');
                 document.body.style.overflow = '';
@@ -329,6 +393,10 @@ function setupSidebar() {
 // ===================================
 // Notifications
 // ===================================
+function setupNotifications() {
+    // Helper function is globally available
+}
+
 function showNotification(message, type = 'info') {
     const container = getOrCreateNotificationContainer();
 
@@ -409,21 +477,6 @@ function setupStarRating() {
 }
 
 // ===================================
-// Badge Progress
-// ===================================
-function setupBadgeProgress() {
-    document.querySelectorAll('.badge-progress').forEach(badge => {
-        const progress = badge.getAttribute('data-progress');
-        const progressBar = badge.querySelector('.progress-bar');
-        if (progressBar && progress) {
-            setTimeout(() => {
-                progressBar.style.width = progress + '%';
-            }, 100);
-        }
-    });
-}
-
-// ===================================
 // Utility Functions
 // ===================================
 function formatDate(dateString) {
@@ -465,8 +518,6 @@ function debounce(func, wait) {
 
 // Export for use in other files
 window.BuddyBloc = {
-    getCurrentUser,
-    updateUser,
     showNotification,
     formatDate,
     formatTime,

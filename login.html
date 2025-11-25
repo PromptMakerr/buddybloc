@@ -16,6 +16,10 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         rel="stylesheet">
 
+    <!-- Supabase Client Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -37,14 +41,16 @@
 
             <!-- Social Login -->
             <div class="social-buttons">
-                <button class="btn-social" type="button">
+                <button class="btn-social" type="button"
+                    onclick="alert('Google login is nog niet ingesteld. Gebruik e-mail.')">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                         <path
                             d="M10 0C4.477 0 0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.879V12.89h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.989C16.343 19.128 20 14.991 20 10c0-5.523-4.477-10-10-10z" />
                     </svg>
                     <span>Google</span>
                 </button>
-                <button class="btn-social" type="button">
+                <button class="btn-social" type="button"
+                    onclick="alert('LinkedIn login is nog niet ingesteld. Gebruik e-mail.')">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
                         <path
                             d="M18.52 0H1.48C.66 0 0 .66 0 1.48v17.04c0 .82.66 1.48 1.48 1.48h17.04c.82 0 1.48-.66 1.48-1.48V1.48C20 .66 19.34 0 18.52 0zM6 17H3V7.5h3V17zM4.5 6.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zM17 17h-3v-4.7c0-1.1 0-2.5-1.5-2.5s-1.7 1.2-1.7 2.4V17h-3V7.5h2.9v1.3h.1c.4-.8 1.4-1.6 2.8-1.6 3 0 3.6 2 3.6 4.6V17z" />

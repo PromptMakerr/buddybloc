@@ -1,0 +1,24 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/signup", "destination": "/signup.html" },
+    { "source": "/dashboard", "destination": "/dashboard.html" },
+    { "source": "/profile", "destination": "/profile.html" },
+    { "source": "/settings", "destination": "/settings.html" },
+    { "source": "/chat", "destination": "/chat.html" },
+    { "source": "/session", "destination": "/session.html" },
+    { "source": "/matchmaking", "destination": "/matchmaking.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/cookies", "destination": "/cookies.html" },
+    { "source": "/disclaimer", "destination": "/disclaimer.html" },
+    { "source": "/admin-dashboard", "destination": "/admin-dashboard.html" },
+    { "source": "/admin-users", "destination": "/admin-users.html" },
+    { "source": "/admin-content", "destination": "/admin-content.html" },
+    { "source": "/admin-analytics", "destination": "/admin-analytics.html" },
+    { "source": "/admin-moderation", "destination": "/admin-moderation.html" },
+    { "source": "/admin-settings", "destination": "/admin-settings.html" },
+    { "source": "/admin-team", "destination": "/admin-team.html" }
+  ]
+}
